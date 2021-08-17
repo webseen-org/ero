@@ -1,0 +1,1644 @@
+
+<!DOCTYPE html>
+<html class="no-js" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraph.org/schema/" xmlns:nc="http://namecheap.com/2010/schema">
+<head><link rel="stylesheet" type="text/css" href="https://files.namecheap.com/cdn/1124/assets/css/v1124.global-style.min.css" nc:bundle="none" />
+
+
+    <!--Start Cookie Management -->
+    <script>window.userAllowedScripsProcessor=function(){function u(){var e,t,n,r=(e="OptanonConsent",(t=document.cookie.match(new RegExp("(^| )"+e+"=([^;]+)")))?decodeURIComponent(t[2]):void 0),i="groups=",a=[];if(r){if(r.split("&").some(function(e){return 0===e.trim().indexOf(i)&&(n=e.substring(i.length,e.length),!0)}),n)for(var o=n.split(","),s=0;s<o.length;s++){var u=o[s],c=u.indexOf(":1");if(-1<c){var l=u.substring(0,c);a.push(l)}}}else a=[1,2,3,4,101,102,103,104,105,106,107,108,109,110];return a}return{activateUserAllowedScripts:function(){var e=u();if(e&&0<e.length)for(var t=0;t<e.length;t++){var n=e[t],r=document.querySelectorAll("script.nc-cookie-category-"+n+"[type='text/plain']");if(r&&0<r.length)for(var i=0;i<r.length;i++){var a=r[i],o=document.createElement("script");if(a.attributes)for(t=0;t<a.attributes.length;t++){var s=a.attributes[t];o.setAttribute(s.name,s.value)}o.type="text/javascript",o.innerText=a.innerText,a.parentElement.appendChild(o),a.parentElement.removeChild(a)}}},addActiveGroupsToDataLayer:function(){window.dataLayer||(window.dataLayer=[]);var e=u();window.dataLayer.push({OnetrustActiveGroups:","+e.join(",")+","})}}}();</script>
+    <!--End Cookie Management -->
+    <!--Start Shopping Cart Actions Tracker -->
+    <script>!function(e){function o(e,n){var a;a=e,window.dataLayer||(window.dataLayer=[]),window.dataLayer.push(a),n&&n()}function r(e){return e?e+" cycle":"1 cycle"}function i(e,n){return e+" "+n}function c(e){return(e.groupTitle+" "+e.title).toLowerCase()}function u(e){return e+"/Add-On"}function m(e){delete e.title,delete e.groupTitle,delete e.ignoreQuantity}function a(t){t.namingParameters.addons.forEach(function(e){var n,a;e.name=(a=e,(u((n=t).category)+" "+c(a)+" "+i(n.namingParameters.duration,n.namingParameters.durationType)+" "+r(n.namingParameters.billingCycle)).toLowerCase()),e.id=c(e),e.category=u(t.category),e.variant=t.variant,function(e,n){if(n.ignoreQuantity){if(n.ignoreQuantity>=n.quantity?(n.ignoreQuantity=n.quantity,n.quantity=0):n.quantity=n.quantity-n.ignoreQuantity,0===n.quantity)return n.quantity=n.ignoreQuantity,n.price="0.00",m(n);var a=n.ignoreQuantity;m(n);var t={};Object.assign(t,n),t.quantity=a,t.price="0.00",e.push(t)}else m(n)}(t.namingParameters.addons,e)})}function t(e){var n;e.id=e.namingParameters.productName.toLowerCase(),e.category=e.namingParameters.productType.split(" ").filter(function(e){return!s.includes(e.toLowerCase())}).join(" "),e.variant=e.namingParameters.productAction,e.name=((n=e).category+" "+n.namingParameters.productName+" "+i(n.namingParameters.duration,n.namingParameters.durationType)+" "+r(n.namingParameters.billingCycle)).toLowerCase()}function d(n){n.forEach(function(e){e.namingParameters&&(t(e),e.namingParameters.addons&&0!==e.namingParameters.addons.length&&(a(e),Array.prototype.push.apply(n,e.namingParameters.addons)),delete e.namingParameters)})}var s;function g(e,n){return{event:"entry",source:e,action:n}}e.actionsTracker=(s=["namecheap"],{addToCart:function(e,n,a){var t,r,i;d(e),o((t=e,r=n,(i={ecommerce:{},event:"addToCart"}).ecommerce.currencyCode=r,i.ecommerce.add={products:t},i),a)},removeFromCart:function(e,n){var a,t;d(e),o((a=e,(t={ecommerce:{},event:"removeFromCart"}).ecommerce.remove={products:a},t),n)},goToDetails:function(e,n){var a,t;d(e),o((a=e,(t={ecommerce:{},event:"productDetails"}).ecommerce.detail={products:a},t),n)}}),e.entryTracker={signIn:function(e,n){o(g(e,"sign-in"),n)},signUp:function(e,n){o(g(e,"sign-up"),n)}}}(window);</script>
+    <!--End Shopping Cart Actions Tracker -->
+    <script type="text/plain" class="nc-cookie-category-2"> window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(20),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{h?h-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(21),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",h=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(13),t(12),"addEventListener"in window&&t(6),s.xhrWrappable&&t(14),d=!0)}c.on("fn-start",function(t,e,n){d&&(h+=1)}),c.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&h>0&&(h-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){M++,S=y.hash,this[u]=b.now()}function o(){M--,y.hash!==S&&i(0,!0);var t=b.now();this[l]=~~this[l]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=b.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,h="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location,b=t("loader");if(w[v]&&b.xhrWrappable){var g=t(10),x=t(11),E=t(8),P=t(6),O=t(13),R=t(7),T=t(14),L=t(9),j=t("ee"),N=j.get("tracer");t(15),b.features.spa=!0;var S,M=0;j.on(u,r),j.on(p,r),j.on(d,o),j.on(h,o),j.buffer([u,d,"xhr-done","xhr-resolved"]),P.buffer([u]),O.buffer(["setTimeout"+s,"clearTimeout"+c,u]),T.buffer([u,"new-xhr","send-xhr"+c]),R.buffer([m+c,m+"-done",m+f+c,m+f+s]),E.buffer(["newURL"]),g.buffer([u]),x.buffer(["propagate",p,h,"executor-err","resolve"+c]),N.buffer([u,"no-"+u]),L.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,"send-xhr"+c),a(j,"xhr-resolved"),a(j,"xhr-done"),a(R,m+c),a(R,m+"-done"),a(L,"new-jsonp"),a(L,"jsonp-end"),a(L,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,M>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),c=t(12),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",h="-start",l="-end",m="fn"+h,v="fn"+l,w="bstTimer",y="pushState",b=t("loader");b.features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=b.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,b.now()])}),a.on(m,function(t,e,n){this.bstStart=b.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),this.bstType])}),c.on(m,function(){this.bstStart=b.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),"requestAnimationFrame"])}),o.on(y+h,function(t){this.time=b.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(23)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(20);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,h="prototype";u&&d&&p&&(i(f,function(t,e){r(u[h],e,s),r(d[h],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(23)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){s.emit("jsonp-error",[],p),s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=c(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),s.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function c(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var s=t("ee").get("jsonp"),f=t(23)(s);if(e.exports=s,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];f.inPlace(HTMLElement.prototype,h,"dom-"),f.inPlace(HTMLHeadElement.prototype,h,"dom-"),f.inPlace(HTMLBodyElement.prototype,h,"dom-"),s.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t(23)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(23),a=t("ee").get("promise"),c=i(a),s=t(20),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t(23)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(23)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",c)}function i(t){b.push(t),l&&(x?x.then(a):v?v(a):(E=-E,P.data=E))}function a(){for(var t=0;t<b.length;t++)r([],b[t]);b.length&&(b=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(23)(u),p=NREUM.o,h=p.XHR,l=p.MO,m=p.PR,v=p.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],b=[];e.exports=u;var g=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(h,g),g.prototype=h.prototype,d.inPlace(g.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var x=m&&m.resolve();if(!v&&!m){var E=1,P=document.createTextNode(E);new l(a).observe(P,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(16),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),h=t(19),l=t(18),m=window.XMLHttpRequest;a.features.xhr=!0,t(14),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],16:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],17:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(20),c=t(21),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var l=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){l[e]=o(h+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],21:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],22:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],23:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(21),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=l(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([b,n,r,a]),a}}function h(t,e){w[t]=l(t).concat(e)}function l(t){return w[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var w={},y={},b={on:h,emit:n,get:m,listeners:l,context:e,buffer:v,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(20),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!x++){var t=g.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+g.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+g.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-g.offset}var c=(new Date).getTime(),s=t("handle"),f=t(20),u=t("ee"),d=window,p=d.document,h="addEventListener",l="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1071.min.js"},b=m&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:c,now:a,origin:w,features:{},xhrWrappable:b};t(17),p[h]?(p[h]("DOMContentLoaded",i,!1),d[h]("load",r,!1)):(p[l]("onreadystatechange",o),d[l]("onload",r)),s("mark",["firstbyte",c],null,"api");var x=0,E=t(22)},{}]},{},["loader",2,15,5,3,4]);
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"NRJS-cf3d03e8590870dd0ff",applicationID:"5867736",sa:1} </script>
+    <script type="text/javascript">
+        userAllowedScripsProcessor.activateUserAllowedScripts();
+    </script>
+          <!--Start Data Layer -->
+        <script type="text/javascript">
+            userAllowedScripsProcessor.addActiveGroupsToDataLayer();
+        </script>
+              <script src="/DataLayer/UserHashDataLayer.ashx"></script> <script>(function(w, d, s, l, i){w[l] = w[l] ||[]; w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f = d.getElementsByTagName(s)[0],j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);})(window, document,'script','dataLayer','GTM-544JFM');</script>
+              <!-- End Data Layer -->
+
+                  
+
+    <title>
+	WordPress Plugins - Namecheap
+</title><meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<link rel="shortcut icon" href="/assets/img/nc-icon/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-76x76.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="https://files.namecheap.com/cdn/1124/assets/img/nc-icon/namecheap-icon-57x57.png">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--  Bing Verification Meta Tag -->
+    <meta name="msvalidate.01" content="E460EA18492F3162D0A602F24040C3F1" />
+    <!-- End Bing Verification Meta Tag -->
+    <link rel="search" type="application/opensearchdescription+xml" href="/namecheap-opensearch.xml" title="Namecheap.com Domain Search" /><meta name="google-site-verification" content="jEgfrLbRNEceWXYO-8n_p7SsUxVdM5-nyCnpzoTZ-G8" />
+        
+    
+    <script type="text/javascript" src="https://files.namecheap.com/cdn/0/assets/js/jquery/1.8.3/v1124.jquery.min.js"></script>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="https://files.namecheap.com/cdn/0/assets/js/v1124.html5shiv.js"></script>
+
+        <script type="text/javascript" src="https://static.nc-img.com/assets/js/respond.min.js"></script>
+
+	<![endif]-->
+	<!--[if IE 9]>
+        <script type="text/javascript" src="https://files.namecheap.com/cdn/0/assets/js/v1124.media.match.min.js"></script>
+	<![endif]-->
+        
+    
+    
+    <script src="https://ap.www.namecheap.com/siteservices/navigationscript?fromCMS=true&fromCMSIdentity=219a248e-597b-4bb7-87a7-ab77463c200d" async></script>
+    
+    
+
+ <!-- from head -->
+    <!-- CSS ENDS -->
+
+    <script type="text/javascript"><!--
+        var NcGlobal = { IsLoggedIn: false, CountryCode: "XX", Roles: [] }
+    </script>
+    
+<!-- Head Extra Content Start -->
+<script type="text/javascript">!function(){var e=document.createElement("style"),n=document.body?document.body:document.querySelector("head");e.innerHTML='*[data-acsb="trigger"] {\n    display: none !important;\n}',n.appendChild(e)}();</script>
+<!-- Head Extra Content End -->
+<link rel="canonical" href="https://www.namecheap.com/wordpress/wordpress-plugins/" /><meta name="Description" content="Learn how to install and manage plugins for Wordpress, the world’s most popular and easy-to-use content management system." /><meta name="Keywords" content="Wordpress Plugins, How to install wordpress plugins, best wordpress plugins, wordpress free plugins, wordpress premium plugins, contact form plugin, wordpress tables plugin, wordpress gallery, wordpress email, wordpress landing page, rss feed plugin" />
+<style type="text/css">
+.reset-mt{margin-top:0 !important}.reset-mb{margin-bottom:0 !important}.margin-top-half{margin-top:8px !important}.margin-top{margin-top:16px !important}.margin-top-2x{margin-top:38px !important}.margin-top-3x{margin-top:48px !important}.margin-top-3_5x{margin-top:56px !important}.margin-bottom-half{margin-bottom:8px !important}.margin-bottom{margin-bottom:16px !important}.margin-bottom-2x{margin-bottom:32px !important}.margin-bottom-3x{margin-bottom:48px !important}.margin-bottom-3_5x{margin-bottom:56px !important}.padding-top-3px{padding-top:3px}.padding-top-5px{padding-top:5px}.padding-left-1_5x{padding-left:24px}.img-min-height{min-height:224px;margin-bottom:56px;box-shadow:none}.img-min-height.cover{background-size:contain}.img-min-height.large{min-height:384px}.table-grid{margin-top:32px;margin-bottom:48px}.intro{position:relative;margin-top:56px}.intro-content{-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,0.25);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,0.25);box-shadow:0 2px 5px 0 rgba(0,0,0,0.25);border:1px solid #f2f2f2;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;padding:48px 32px}.intro-content h2{margin-top:0}.intro-content h3{margin-top:0;margin-bottom:16px}.intro-content p{margin-bottom:16px}.intro-content .numbered-bullets{padding-left:16px}ol.intro-list{padding:1em 0 0;list-style:none}ol.intro-list li{counter-increment:item;margin-bottom:16px}ol.intro-list li::before{text-align:left;font-weight:bold;content:counter(item) ".";padding-right:5px}ul.intro-list{padding-left:40px;list-style-type:disc;font-weight:normal;color:#D6D6D6;margin-top:16px;margin-bottom:24px}ul.intro-list li{margin-bottom:16px;color:#6d6e70}ul.intro-list li::before{text-align:left;font-weight:bold;padding-right:5px}.intro-3-img img{width:150px;height:150px;float:left}.intro-3-content{margin-left:150px;min-height:150px;text-align:left;padding:0 32px;position:relative}.intro-3-content h3{font-weight:normal;margin-top:0;margin-bottom:8px}.navbar-right{position:absolute;top:0;right:0}.navbar-right ul{margin:0 !important}.navbar-right ul li{margin-bottom:12px !important;padding-bottom:0 !important}.navbar-right ul li:last-child{margin-bottom:0px !important}nav.secondary a{color:#de3723}nav.secondary a:visited{color:#de3723}nav.secondary a:hover{color:#de3723}.grid-row .headline{margin:0px auto 32px}.grid-row .headline h3{font-weight:bold;margin-top:56px}.grid-row .headline-subtitle{margin-top:48px;margin-bottom:16px}.grid-row .headline-subtitle h3{margin-top:0}.grid-row .headline-subtitle-2{margin-top:32px;margin-bottom:16px;font-size:16px}.grid-row .headline-subtitle-2 h3{margin-top:0;font-weight:bold}.grid-row .grid-col p:last-child{margin-bottom:0}h3.headline-subtitle-2{font-weight:bold}.grid-row .headline-subtitle-image{display:flex;margin:48px 0}.grid-row .headline-subtitle-image img{height:150px;width:150px}.grid-row .headline-subtitle-image div{padding-left:36px;display:flex;align-items:center}.grid-row .headline-subtitle-image div h3{line-height:36px;font-size:28px;font-weight:700;margin:0}.grid-row .headline-subtitle-image div h3 span{width:100%;display:block}.hr-margin-top{margin-top:2em !important}.hr-margin-top-medium{margin-top:3.5em !important}.bullet-points{list-style-type:disc;font-weight:normal;color:#D6D6D6;margin:16px 0}.bullet-points li{margin-bottom:16px}.bullet-points li h3{color:#6d6e70}.bullet-points li p{color:#6d6e70}.bullet-points li:last-child{margin-bottom:0}.numbered-bullets{margin:16px 0;font-weight:bold;color:#6d6e70}.numbered-bullets li{margin-bottom:16px}.numbered-bullets li p{font-weight:normal;margin-bottom:0}.numbered-bullets li:last-child{margin-bottom:0}.numbered-bullets .img{margin-top:32px}.numbered-bullets .bullet-points{padding-left:1em}.alsolike{padding-left:0;padding-right:0}.alsolike .featured-list{margin-bottom:0}.alsolike .featured-list-item{margin-bottom:0}.alsolike h3{margin-top:0;margin-bottom:8px}.alsolike .headline h3{margin-top:0}.featured-grid-3{margin:32px 0 48px}.featured-grid-3 .featured-list-item{margin-bottom:0 !important}.topics-3-img{background-repeat:no-repeat;background-size:contain}.featured-grid-3 .featured-list{padding:0;margin:0 0 24px}.featured-grid-3 .featured-list p{margin-bottom:0}div.img{margin:32px auto 48px}div.img img{width:80%}li .img{margin-left:-32px}.cross-links-container{border-top:1px solid #D6D6D6}.background{background-color:#F2F2F2}.full-size{width:100%}.alsolike .border-bottom__large{margin:0 2em}.alsolike .border-bottom__small{margin:0 2.5em}.border-bottom__large{border-bottom:1px solid #D6D6D6;overflow:auto}.border-bottom__large .cross-links__with-image{position:relative;display:flex;display:-moz-flex;display:-webkit-flex;display:-ms-flex;padding:48px 0}.border-bottom__small .cross-links__with-image{border-bottom:1px solid #D6D6D6}.border-bottom__large .cross-links__no-image{border-top:1px solid #D6D6D6}.border-bottom__small .cross-links__no-image{border-bottom:1px solid #D6D6D6;border-top:1px solid #D6D6D6}.cross-links__with-image{position:relative;display:table;padding:48px 0}.cross-links__with-image hr{margin-top:0}.cross-links__with-image__img-block{display:table-cell;vertical-align:middle;width:150px}.cross-links__with-image__img-block img{height:150px;width:150px}.cross-links__with-image-text-block{min-height:150px;text-align:left;padding-left:40px;position:relative}.cross-links__with-image-text-block h3{font-weight:normal;margin-top:0;margin-bottom:8px}.cross-links__with-image-text-block ul{padding-left:0 !important;list-style-type:none;margin-bottom:0}.cross-links__no-image{position:relative;display:flex;display:-webkit-flex;justify-content:flex-start;padding:48px 0}.cross-links__no-image__block h3{margin-top:0;margin-bottom:8px}.cross-links__no-image__block{text-align:left;position:relative;float:left}.cross-links__no-image__block ul{list-style-type:none;padding-left:0}.topics-list{margin:32px 0}.topics-list-block{max-width:87.5em;margin:0 auto 32px;position:relative}.topics-list-block:last-child{margin-bottom:0}.topics-list-block::after{content:'';display:block;clear:both}.topics-list-block img{width:75px;height:75px;float:left}.topics-list-content{margin-left:104px;text-align:left}.topics-list-content h3{margin-bottom:8px}.topics-list-content p{margin-bottom:16px;color:#6d6e70}.topics-list-content p:last-child{margin-bottom:0}.topics-list-block.topic-sm img{width:32px;height:32px;margin:6px}.topics-img-2x .topics-list-block.topic-sm .topics-list-content{margin-left:40px !important}.topics-img-2x .topics-list-block.topic-sm img{width:24px !important;height:10px !important}.topics-list-block.topic-sm h3{margin-bottom:8px}.topics-list-block.topic-sm .topics-list-content{margin-left:61px}.citation{background-color:transparent;border-left:2px solid #6d6e70;margin:48px 0;background-color:#F1F1F2}.citation blockquote{text-align:left}.citation figcaption:before{content:none}.pullquotes{display:inline-block;font-size:24px;margin:0.25em 0;padding:0.35em 46px;line-height:1.45;position:relative;color:#383838}.pullquotes:before{background:url("https://files.namecheap.com/cdn/1124/img/icons/commas@2x.png") no-repeat 0 0;background-size:cover;content:"";width:30px;height:20px;display:inline-block;position:absolute;top:0;left:0}.pullquotes:after{background:url("https://files.namecheap.com/cdn/1124/img/icons/commas-invert@2x.png") no-repeat 0 0;background-size:cover;content:"";width:30px;height:20px;display:inline-block;position:absolute;top:0;right:0}.pullquotes p{margin-bottom:0;text-align:left}.pullquotes cite{color:#6d6e70;font-size:16px;display:block;font-style:normal;text-align:left}.small-quote{border-left:1px solid #ddd;padding-left:16px;margin:32px 0}.small-quote p{margin-bottom:16px;font-family:Courier}.grid-col-highlights{width:80%;float:left;margin-top:16px;position:relative;padding:0}.offset-grid-col-highlights{margin-left:10%}p.premium-dns{margin-bottom:48px}.grid-box h2{margin-bottom:8px}.highlights-img{-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-repeat:no-repeat;background-position:center;width:250px;position:absolute;top:0;bottom:0;left:0;width:250px;border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;-moz-border-radius:5px 0 0 5px}.highlights-content{margin-left:250px;min-height:250px;text-align:left;padding:32px;position:relative;border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;-moz-border-radius:0 5px 5px 0;background-color:#F2F2F2}.highlights-content h3{font-weight:normal;margin-top:0;margin-bottom:8px}.highlights-content a{width:150px}.grid-row.seo-components{margin-top:0px !important;margin-bottom:56px !important}.highlights-top-image .one-half{padding:0 16px !important}.highlights-top-image img{width:100%;border-bottom:1px solid #fff;display:inline-block}.highlights-top-image .container{margin-top:-5px;background:none 0% 0% repeat scroll #f2f2f2;padding:24px;display:inline-block}.highlights-top-image .two-thirds::before{content:'';display:table}.seo-boxes{margin-top:24px;margin-bottom:48px}.seo-boxes .one-half:first-child .grid-box{margin-left:0;margin-right:1em}.seo-boxes .one-half:last-child .grid-box{margin-left:1em;margin-right:0}.grid-row.group.versus-content{margin-bottom:32px !important}.versus-content{position:relative;margin:2em auto}.vs-box{float:left;width:50%;min-height:104px;text-align:center;padding:0 32px}.vs-box:first-child{-webkit-border-top-left-radius:5px;-moz-border-top-left-radius:5px;border-top-left-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-bottom-left-radius:5px;border-bottom-left-radius:5px;border-right:1px solid #fff}.vs-sep{position:absolute;background-color:#fff;left:50%;top:50%;width:48px;height:48px;line-height:48px;margin-left:-24px;margin-top:-24px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;text-align:center;font-weight:bold}.vs-box:last-child{-webkit-border-top-right-radius:5px;-moz-border-top-right-radius:5px;border-top-right-radius:5px;-webkit-border-bottom-right-radius:5px;-moz-border-bottom-right-radius:5px;border-bottom-right-radius:5px;border-left:1px solid #fff}.vs-box img{height:48px;width:auto;margin-top:28px}.grid-box{padding:2em 2.5em 1.5em;background:none 0% 0% repeat scroll #f2f2f2;min-height:610px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px}.grid-row .grid-col:last-child{margin-bottom:0}.howtosearch{padding:12px 32px;background-color:#F2F2F2;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}.kb-search-form{background-color:transparent;margin-bottom:0}.kb-search-form input[type="search"]{border:none}.howtosearch h2{margin-top:20px}.hr-half-size{width:50%;margin:56px auto !important}.promo-chat .grid-row{margin:0 auto !important}.grid-row.group{margin-bottom:56px}.grid-row .grid-col hr{margin-bottom:56px}.promo{min-height:350px}.promo .promo-item{margin-left:40%}.promo img{width:250px;left:13%}.light .carousel-item{background-color:transparent}@media only screen and (min-width:1280px){.grid-row.group.versus-content{padding:0}}@media only screen and (max-width:1279px){.vs-box img{height:32px;width:auto;margin-top:36px}.border-bottom__large,.border-bottom__small{margin:0 1.125em !important}}@media only screen and (max-width:1023px){div.img img{width:100%}.seo-boxes .two-thirds{width:80% !important;margin-left:10% !important;margin-right:10% !important}.vs-box{clear:both;float:left;width:100%;min-height:104px;text-align:center}.vs-box:first-child{-webkit-border-top-left-radius:5px;-moz-border-top-left-radius:5px;border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-top-right-radius:5px;border-top-right-radius:5px;-webkit-border-bottom-left-radius:0;-moz-border-bottom-left-radius:0;border-bottom-left-radius:0;border-right:0;border-bottom:1px solid #fff}.vs-box:last-child{-webkit-border-top-right-radius:0;-moz-border-top-right-radius:0;border-top-right-radius:0;-webkit-border-bottom-left-radius:5px;-moz-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px;-moz-border-bottom-right-radius:5px;border-bottom-right-radius:5px;border-left:0;border-top:1px solid #fff}.promo img{left:10%}}@media only screen and (min-width:800px){.headline h2{font-size:36px}}@media only screen and (max-width:799px){.hr-mobile{display:none}.secondary.navbar-right ul{border-top:1px solid #d6d6d6;border-bottom:1px solid #d6d6d6;padding:32px 0}.intro-content{margin-bottom:32px;padding:32px 16px}.navbar-right{position:relative;text-align:center}.navbar-right ul{margin-top:2em !important}.hr-large{display:none}.cross-links__with-image{position:relative;margin:0 auto;text-align:center}.cross-links__with-image-img{margin-left:0}.cross-links__with-image-img img{width:150px;height:150px;float:none}.cross-links__with-image-container{text-align:left;height:auto;font-size:16px}.cross-links__with-image-container h3{font-weight:normal;margin-top:0;margin-bottom:16px}.cross-links__with-image-container ul{padding-left:0 !important;list-style-type:none}.grid-col-highlights{padding:0 1em}.highlights-img{left:1em}.highlights-content{min-height:250px;text-align:left;padding:32px;background-color:#F2F2F2;position:relative}.highlights-content h3{font-weight:normal;margin-top:0;margin-bottom:8px}.highlights-content a{width:150px}.seo-boxes .one-half:first-child .grid-box{margin-left:0;margin-right:1em;margin-bottom:0}.seo-boxes .one-half:last-child .grid-box{margin-left:1em;margin-right:0}.seo-boxes .two-thirds{width:100% !important;margin-left:0 !important;margin-right:0 !important}.grid-box{min-height:auto;padding-bottom:48px}.seo-boxes .one-half:first-child .grid-box{margin-left:0;margin-right:1em;margin-bottom:0}.seo-boxes .one-half:last-child .grid-box{margin-left:1em;margin-right:0}ul.bullet-points{padding-left:32px}ol.numbered-bullets{padding-left:32px}.grid-col-highlights{width:100%}.offset-grid-col-highlights{margin-left:0}.promo img{width:250px;left:25px}.features.smaller-image{margin-bottom:36px !important}.img-min-height{min-height:104px !important}.img-min-height.cover{background-size:cover}}@media only screen and (min-width:640px){.promo{padding:6em 0}.featured-grid.top-image .grid-col{padding:0 1em 1.5em}}@media only screen and (max-width:639px){.grid-row .headline-subtitle-image img{height:75px;width:75px}.grid-row .headline-subtitle-image div{padding-left:24px}.grid-row .headline-subtitle-image h3{line-height:32px !important;font-size:24px !important}.topics-list-block{max-width:87.5em;margin:1.5em auto;position:relative}.topics-list-block img{width:75px;height:75px;float:left}.topics-list-content{text-align:left;position:relative;transform:none}.topics-list-content h3{margin-bottom:16px}.topics-list-content p{margin:0}.topics-list-content .bullet-points{padding-left:16px}.topics-list-content .copy-icon-url-bullets{padding-left:16px}.border-bottom__large,.border-bottom__small{border-top:1px solid #D6D6D6}.border-bottom__large .cross-links__with-image,.border-bottom__small .cross-links__with-image{display:block}.cross-links-container,.cross-links__no-image{border-top:none !important}.cross-links__with-image__img-block{margin-left:0;width:100%;display:block;margin-bottom:32px;text-align:center}.cross-links__with-image__img-block img{width:150px;height:150px;float:none}.cross-links__with-image-text-block{display:inline-block}.cross-links__with-image-text-block{text-align:left;height:auto;font-size:16px;padding-left:32px;padding-right:32px}.cross-links__with-image-text-block h3{font-weight:normal;margin-top:0;margin-bottom:16px}.cross-links__with-image-text-block ul{padding-left:0 !important;list-style-type:none}.cross-links__no-image__block{justify-content:center}.seo-boxes .one-half:first-child .grid-box{margin-left:0;margin-right:0;margin-bottom:32px}.seo-boxes .one-half:last-child .grid-box{margin-left:0;margin-right:0}.features .grid-col .one-half{margin-bottom:0}.featured-grid.top-image{margin-bottom:2em}.promo .promo-item{margin-left:0;text-align:left}.promo img{width:150px}}@media only screen and (min-width:480px){.featured-list-item.topics-3{padding-right:32px !important;overflow:hidden;margin-bottom:32px}}@media only screen and (max-width:479px){.intro-3-img{width:100%;min-height:150px;position:relative;display:block;text-align:center}.intro-3-img img{float:none}.intro-3-content{margin:0;padding:24px 0 0}.cross-links-container{padding:0 1em;margin:0;width:100%}.cross-links__with-image-img{margin-top:32px}.cross-links__with-image-container{padding:0 0 32px 0}.cross-links__no-image{display:inline-block;width:100%}.highlights-img{left:0;height:288px;width:100%;float:none;position:relative;border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0}.highlights-content{height:auto;padding:24px;margin:0 auto;border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px}.highlights-content a{width:100%}.featured-grid-3 .featured-list img{width:75px;height:75px;margin-bottom:32px}}.related-articles-wrapper{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;-o-flex-direction:row;flex-direction:row;justify-content:flex-start;flex-wrap:wrap;margin-bottom:24px;margin-left:-12px;margin-right:-12px;width:100%}.related-articles-card-wrapper{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;-o-flex-direction:row;flex-direction:row;justify-content:flex-start;flex-wrap:wrap;width:100%}.related-articles-item-wrapper{max-width:50%;width:50%;flex-grow:0}.related-articles-card-item-wrapper{max-width:33.33333%;width:33.33333%;flex-grow:0;margin-bottom:24px;color:#6d6e70}.related-articles-card-item-wrapper:hover{text-decoration:none}.related-articles-item{margin:0 12px;padding:24px 0;border-top:1px solid #DDDDDD}.related-articles-card-item{height:100%;margin:0 12px;padding:32px 24px;background-color:#F2F2F2;border-radius:5px}.related-articles-card-item:hover{box-shadow:0 2px 5px 0 rgba(0,0,0,0.25);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,0.25);-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,0.25)}@media (max-width:699px){.related-articles-item-wrapper{max-width:100%;width:100%}.related-articles-card-item-wrapper{max-width:50%;width:50%}}@media (max-width:479px){.related-articles-card-item-wrapper{max-width:100%;width:100%}.related-articles-card-item{margin:0}}.related-articles-item-title{font-weight:700;font-size:18px;color:#8DC1C1;line-height:24px;margin-bottom:16px}.related-articles-card-item-title{font-weight:700;font-size:18px;color:#8DC1C1;line-height:24px;margin-bottom:16px}.headline-subtitle-related-article{font-size:24px;color:#6D6E70;line-height:24px;margin-top:56px;margin-bottom:32px}.hero.has-btn div.hero-btn{position:initial}.hero .headline{margin-bottom:1.5em}
+</style>
+<meta name="Generator" content="Sitefinity 3.7.2136.240:1" /></head>
+<body class="login">
+   <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-544JFM"
+       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+    <form name="aspnetForm" method="post" action="./" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="WK4KThI8l/It5mW+BkGxAWheY8yyMmEc44UTHoVrir6Gdcuo9xli6zygpPMoNkrivrvD9xQu7M9HbMXTyoMNkMM0FbsrOgBQv7HZN80HirGG2ifpY9e1lXYC5iNrYZSgL1B63bJ/API0tevk3LlBCJsFsiQsSRyneARJ/tVF/EIJT3bfJq4BborY90Z2z5EJZlP5TYVsrqR+eSiDAfpOHLobkKCiKCk09xJk2bn/XZ8p/QtDZrC+nvI9zgaI3xjCwhM+9rwNtjyA/tLeUmqAP8V/5VGkX1uY4Hme+4BE4W5uXn1Yt6/mlbwZo/CIqK8q6SGVBapJk2wtS/r6Py1WIBStjHJxB72TvNmVvg5AHUh8yYSe/YHTotbVNeubYBQrOZ2rSg==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="15E68AF1" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="VvN6PrDZYNs+m8vrJLypAOS0K16TSM02OtyIqL7FYkYHBSs9bfyXHL5UFqbsfwNksls7Tb4Hn+lXkstfZENnL4RdaddKOirbXemb8Hfriw6KCkxm3/DD42huaUGJ0nbO89qOFQ==" />
+    
+
+	
+    <!-- HEADER BEGIN -->
+    <header id="header" class="group" role="banner" style="">
+		<nav role="navigation">
+				
+			<div class="logo"><a href="/"><img src="https://files.namecheap.com/cdn/1124/assets/img/logos/namecheap.svg" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_nclogo" alt="Namecheap" /></a></div>
+			
+			<a href="#" class="nav-overflow-toggle" onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Menu', 'click', 'menu');">Menu <span>+</span></a>
+            
+			<div class="primary">
+
+				<div action="#" method="get" class="search-form quick-search" role="search">
+                    <div class="form">
+                    <fieldset>
+					    <input name="ctl00$ctl00$ctl00$ctl00$base_content$web_base_content$siteSearchQuery" type="search" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_siteSearchQuery" class="handlereturn" placeholder="Search Namecheap" /><!--
+					    --><button type="button" class="ncRedirectButton " value="eyJ1IjoiL3N1cHBvcnQva25vd2xlZGdlYmFzZS9zZWFyY2hSZXN1bHQuYXNweCIsIm0iOiJHRVQiLCJiIjoiRmFsc2UiLCJzIjoiZmllbGRzZXQiLCJwIjogW3sibiI6InEiLCJ2IjoiIiwiZiI6ImN0bDAwJGN0bDAwJGN0bDAwJGN0bDAwJGJhc2VfY29udGVudCR3ZWJfYmFzZV9jb250ZW50JHNpdGVTZWFyY2hRdWVyeSJ9XX0=" name="ctl00$ctl00$ctl00$ctl00$base_content$web_base_content$siteSearchButton$actionObjectPlaceHolder">Search</button>
+
+
+                        <a class="close" href="#">Close</a>
+                    </fieldset>
+				    </div>
+				</div>
+
+				<ul>
+                    
+        <li class=" expandable">
+            <a href="/domains/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'domains');">
+                Domains
+                
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/domains/domain-name-search/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'domain name search');">
+                                    Domain Name Search
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/transfer/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'domain transfer');">
+                                    Domain Transfer
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/new-tlds/explore/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'new tlds');">
+                                    New TLDs
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/bulk-domain-search/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'bulk domain search');">
+                                    Bulk Domain Search
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/personal/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'personal domain');">
+                                    Personal Domain
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/marketplace/buy-domains/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'marketplace');">
+                                    Marketplace
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/whois/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'whois lookup');">
+                                    Whois Lookup
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/security/premiumdns/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'premiumdns');">
+                                    PremiumDNS
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/domains/freedns/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Domains', 'click', 'freedns');">
+                                    FreeDNS
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/hosting/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'hosting');">
+                Hosting
+                
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/hosting/shared/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'shared hosting');">
+                                    Shared Hosting
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/wordpress/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'wordpress hosting');">
+                                    WordPress Hosting
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/hosting/reseller/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'reseller hosting');">
+                                    Reseller Hosting
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/hosting/vps/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'vps hosting');">
+                                    VPS Hosting
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/hosting/dedicated-servers/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'dedicated servers');">
+                                    Dedicated Servers
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/hosting/hosting-migrate-to-namecheap/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Hosting', 'click', 'migrate to namecheap');">
+                                    Migrate to Namecheap
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/wordpress/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('WordPress', 'click', 'wordpress');">
+                WordPress
+                
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/wordpress/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('WordPress', 'click', 'managed wordpress hosting');">
+                                    Managed WordPress Hosting
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/migrate-wordpress/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('WordPress', 'click', 'migrate to wordpress');">
+                                    Migrate to WordPress
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/hosting/email/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Email', 'click', 'email');">
+                Email
+                
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/apps/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Apps', 'click', 'apps');">
+                Apps
+                <span class="gb-badge gb-badge--new-item new-promo">NEW</span>
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/apps/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Apps', 'click', 'marketplace');">
+                                    Marketplace
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/supersonic-cdn/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Apps', 'click', 'cdn');">
+                                    CDN
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/id-validation/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Apps', 'click', 'id validation');">
+                                    ID Validation
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/apps/subscriptions" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Apps', 'click', 'subscriptions');">
+                                    Subscriptions
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/visual/"  
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Apps', 'click', 'visual');">
+                                    Visual
+                                    
+                                    
+                                </a>
+                                <ul class="subitems">
+                                    
+                                        <li class="gb-dropdown__subitem ">
+                                            <a href="/visual/site-maker/" 
+                                                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Site Maker', 'click', 'site maker');">
+                                                Site Maker
+                                                <span class="gb-badge gb-badge--new-item panel-new-promo">NEW</span>
+                                                
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="gb-dropdown__subitem ">
+                                            <a href="/logo-maker/" 
+                                                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Logo Maker', 'click', 'logo maker');">
+                                                Logo Maker
+                                                
+                                                
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="gb-dropdown__subitem ">
+                                            <a href="/visual/card-maker/" 
+                                                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Business Card Maker', 'click', 'business card maker');">
+                                                Business Card Maker
+                                                
+                                                
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            </li>
+                         
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/security/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'security');">
+                Security
+                <span class="gb-badge gb-badge--new-item new-promo">NEW</span>
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/security/ssl-certificates/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'ssl certificates');">
+                                    SSL Certificates
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/security/domain-privacy-service/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'domain privacy');">
+                                    Domain Privacy
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/security/premiumdns/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'premiumdns');">
+                                    PremiumDNS
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/supersonic-cdn/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'cdn');">
+                                    CDN
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/vpn/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'vpn');">
+                                    VPN
+                                    <span class="gb-badge gb-badge--new-item panel-new-promo">UPDATED</span>
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/id-validation/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'id validation');">
+                                    ID Validation
+                                    <span class="gb-badge gb-badge--new-item panel-new-promo">NEW</span>
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/security/2fa-two-factor-authentication/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', '2fa');">
+                                    2FA
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/dns/free-public-dns/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Security', 'click', 'public dns');">
+                                    Public DNS
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/domains/transfer/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Transfer to Us', 'click', 'transfer to us');">
+                Transfer to Us
+                <span class="gb-badge gb-badge--new-item gb-badge--info tryme-badge">TRY ME</span>
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/domains/transfer/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Transfer to Us', 'click', 'transfer domains');">
+                                    Transfer Domains
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/hosting/hosting-migrate-to-namecheap/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Transfer to Us', 'click', 'migrate hosting');">
+                                    Migrate Hosting
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/migrate-wordpress/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Transfer to Us', 'click', 'migrate wordpress');">
+                                    Migrate WordPress
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/hosting/email/migrate-email/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Transfer to Us', 'click', 'migrate email');">
+                                    Migrate Email
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="/help-center/" 
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'help center');">
+                Help Center
+                
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="/support/knowledgebase/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'knowledgebase');">
+                                    Knowledgebase
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/guru-guides/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'guru guides');">
+                                    Guru Guides
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/guru-guides/summit/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'expert summit');">
+                                    Expert Summit
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/blog/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'blog');">
+                                    Blog
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/support/knowledgebase/category/2253/howto-videos/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'how-to videos');">
+                                    How-To Videos
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="/status-updates/" 
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Help Center', 'click', 'status updates');">
+                                    Status Updates
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+        <li class=" expandable">
+            <a href="https://ap.www.namecheap.com" rel=nofollow
+                onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'account');">
+                Account
+                
+            </a>
+            <a href="#" class="toggle">+</a>
+        
+            <div class="panel">
+                 <ul>
+                     
+                             <li >
+                                <a href="https://ap.www.namecheap.com" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'dashboard');">
+                                    Dashboard
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="https://ap.www.namecheap.com/expiringsoon/domains" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'expiring soon');">
+                                    Expiring Soon
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="https://ap.www.namecheap.com/Domains/DomainList" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'domain list');">
+                                    Domain List
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="https://ap.www.namecheap.com/ProductList/HostingSubscriptions" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'hosting list');">
+                                    Hosting List
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="https://ap.www.namecheap.com/ProductList/EmailSubscriptions" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'private email');">
+                                    Private Email
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="https://ap.www.namecheap.com/ProductList/SslCertificates" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'ssl certificates');">
+                                    SSL Certificates
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                             <li >
+                                <a href="https://ap.www.namecheap.com/settings/personal-info/" rel=nofollow
+                                    onclick="if (typeof (LogGAEvent) === 'function') LogGAEvent('Account', 'click', 'profile');">
+                                    Profile
+                                    
+                                    
+                                </a>
+                            </li>
+                            
+                 </ul>
+            </div>
+        
+        </li>
+    
+				</ul>
+			</div>
+
+			<div class="top-hat expandable-group">
+				<div class="row">
+                <ul>
+					<li class="expandable nowarning">
+						<span class="toggle">CONTACT US <span class="expand">+</span></span>
+						<div class="panel">
+							
+                            
+            <ul>
+                
+                    <li >
+                        <a href="https://support.namecheap.com/index.php?/Tickets/Submit" >
+                            Submit Ticket
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/help-center/live-chat/" >
+                            Live Chat
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/support/knowledgebase/article.aspx/9196/5/how-and-where-can-i-file-abuse-complaints" >
+                            Report Abuse
+                        </a>
+                    </li>
+                
+            </ul>
+        
+						</div>
+					</li>
+					<li class="expandable hidewhenloggedin sign-in-box">
+						<a href="#" class="toggle">Sign In <span class="expand">+</span></a>
+						<div class="panel">
+							<div class="sign-in-form">
+                            <fieldset>
+					            <input type="text" name="LoginUserName" title="Username" placeholder="Username" autocapitalize="off" autocorrect="off" class="input removespecialchars handlereturn" maxlength="20" />
+					            <input type="password" name="LoginPassword" title="Password" placeholder="Password" class="input handlereturn" maxlength="100" />
+								<input type="hidden" name="hidden_LoginPassword" />
+					            <a href="/myaccount/login/" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_topNavLoginLink" class="head-loginb ncRedirectButton btn sign-in-btn btn-block" rel="follow" onclick="window.entryTracker.signIn(&#39;header&#39;)">Sign In</a>
+					            <a href="https://ap.www.namecheap.com/ResetPassword" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_passwordRemiderLink" title="Password Reminder">Forgot your password?</a>
+                            </fieldset>
+							</div>
+						</div>
+					</li>
+					<li class="hidewhenloggedin sign-up"><a href="/myaccount/signup/">Sign Up</a></li>
+                    <li class="expandable signed-in hidewhennotloggedin  user-menu">
+						
+                        <a href="#user" class="toggle"><span data-username="">Hi</span><span class="expand">+</span></a>
+						<div class="panel">
+							
+                            
+                            <div class="user-options">
+                                <div class="header">
+									<strong id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_headerchangeAccount">Your Account</strong>
+								</div>
+                                <div class="container">
+                                    <div class="group">
+                                        <p class="left">Customer</p> <p class="right customer"></p>
+                                    </div>
+                                    <div class="group">
+                                        <p class="left">Username</p> <p class="right username"></p>
+                                    </div>
+                                    <ul>
+                                        <li><a id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_accountPanelDashboardLink">Dashboard</a></li>
+                                        <li><a id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_accountPanelProfileLink">Profile</a></li>
+                                        <li><a id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_accountPanelSupportPinLink">Support PIN</a></li>
+                                        <li><a href="/myaccount/signout.aspx">Sign out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+					</li>
+                    
+				</ul>
+				<ul class="commerce">
+					<li id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_shoppingCartWithPanel" class="expandable shopping-cart">
+						<a href="/shoppingcart/"><span id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_spanIconCart" class="icon-cart"></span><span id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_spanCartTotal" class="cart-dollar-value">$0.00</span></a>
+                        <div class="panel">
+                                <div class="cart">
+                                    <header>
+                                       <strong id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_headerchangeCart">Your Cart</strong>
+                                    </header>
+                                    <ul>
+                                        
+                                        <li class="subtotal">
+                                            Subtotal <span id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_spanCartTotalPanel" class="cart-dollar-value">$0.00</span>
+                                        </li>
+                                    </ul>
+                                    <p><a href="/shoppingcart/" class="btn btn-block reset-margin">View Cart</a></p>
+                                </div><!-- .cart -->
+                            </div>
+					</li>
+                    
+
+					<li id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_currencyList" class="expandable currency-dropdown">
+						<a class="toggle">
+                            <abbr id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_currencyDisplay" class="current-currency" title="U.S. Dollar">USD</abbr>
+                            <span class="expand">+</span>
+                        </a>
+						<div class="panel">
+                        
+	                        <ul>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="USD"><abbr class="usd" title="U.S. Dollar">U.S. Dollar</abbr></a>
+			                    </li>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="EUR"><abbr class="eur" title="Euro">Euro</abbr></a>
+			                    </li>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="GBP"><abbr class="gbp" title="British Pound">British Pound</abbr></a>
+			                    </li>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="CAD"><abbr class="cad" title="Canadian Dollars">Canadian Dollars</abbr></a>
+			                    </li>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="AUD"><abbr class="aud" title="Australian Dollars">Australian Dollars</abbr></a>
+			                    </li>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="INR"><abbr class="inr" title="Indian Rupees">Indian Rupees</abbr></a>
+			                    </li>
+	                    
+			                    <li>
+				                    <a class="currency-menu-item" href="#" rel="nofollow" nc:rel="CNY"><abbr class="cny" title="China Yuan RMB">China Yuan RMB</abbr></a>
+			                    </li>
+	                    
+                                <li>
+                                    <a href="/support/payment/currency-exchange-rates/" rel="follow">More Info &rarr;</a>
+                                </li>
+		                       </ul>
+	                    
+						</div>
+					</li>
+                    
+                    <li class="search">
+                            <a class="toggle-search" href="#">Search</a>
+                    </li>
+				</ul>
+                </div>
+			</div>
+
+		</nav>
+	</header>
+    <!-- HEADER END -->
+
+	
+    
+    
+        
+<!-- Large Hero with Search -->
+<div id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_home_content_page_content_left_ctl01_heroContainer" class="hero group has-btn" style="background-color:#cccccc; background-image:url(https://files.namecheap.com/cdn/1124/assets/img/heroes/support.jpg); background-repeat:no-repeat; background-position:top center;">
+    <picture></picture>
+    <div class="hero-body">
+    
+<div class="headline">
+    <h1>WordPress Plugins</h1>
+    
+    
+</div>
+
+
+    
+        <div class="hero-btn">
+            <a href="/wordpress/" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_home_content_page_content_left_ctl01_ctaPrimary" class="btn">Get EasyWP</a>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    
+    
+
+
+</div>
+<!-- .hero -->
+
+
+
+
+<nav class="breadcrumbs"><p>
+    <!-- BREADCRUMB-STARTS-->
+        <a href="/wordpress/">WordPress</a> &rarr;
+    
+    <strong>WordPress Plugins</strong><!-- BREADCRUMB-ENDS-->
+</p></nav>
+<div class="grid-row group intro"> <div class="grid-col two-thirds offset-one-sixth"> <div class="intro-content"> <h2>A Quick look at the WordPress Plugins Tutorial</h2> <p>WordPress plugins are a useful and easy to use way to customize your WordPress site. These app-style add-ons increase the functionality of your pages. If you want to add features such as an <a href="https://www.easywp.com/blog/create-wordpress-gallery/">image gallery</a> or automate functions like backups on your site, you need to learn how to install them. This tutorial takes you through how to install WordPress plugins and covers the best plugins from free to premium that can get your WordPress powered site or blog running like a well-oiled machine.</p> <p>Before we begin, we should note that plugins are only available to users with their own <a href="/hosting/wordpress-hosting/how-to-install-wordpress/">installation of WordPress</a>. Sites hosted on Wordpress.com won't have access to them. There are three methods for installing plugins: through WordPress's built-in search and installation function; by using WordPress’s plugin upload feature; or by uploading the plugin to your website using FTP.</p> </div> </div> <nav class="grid-col one-sixth secondary navbar-right" role="navigation"> <ul> <li><a href="#wordPress-plugin-search" class="smooth-scroll">WordPress plugin search</a></li> <li><a href="#how-to-install-premium" class="smooth-scroll">How to install a premium plugin using the WordPress Dashboard</a></li> <li><a href="#Manually-install-a-WordPress-plugin-with-FTP" class="smooth-scroll">Manually install a WordPress plugin with FTP</a></li> <li><a href="#After-Installation" class="smooth-scroll">After Plugin Installation</a></li> <li><a href="#best-wordpress-plugins" class="smooth-scroll">Best WordPress plugins to start with</a></li> <li><a href="#WordPress-premium-plugins" class="smooth-scroll">Premium WordPress Plugins</a></li> <li><a href="#essential-plugins" class="smooth-scroll">Essential WordPress Plugins</a></li> </ul> </nav> </div> <div class="grid-row group" id="wordPress-plugin-search"> <div class="grid-col two-thirds offset-one-sixth"> <div class="headline"> <h2>WordPress plugin search</h2> </div> <p>This method is reserved for installing a plugin that's available in the WordPress plugin directory. Our optimized WordPress hosting service, <a href="/wordpress/">EasyWP</a>, includes access to the plugin directory, as well. This covers the majority of free and freemium plugins. Follow these steps to install and activate one:</p> <ol class="numbered-bullets"> <li> <p>Head to Plugins in your WordPress dashboard and click <strong>Add New</strong></p> </li> <li> <p>To find a plugin, type the plugin name or the functionality you're looking for into the search bar and hit your return key to run a search. Compatible plugins will be listed below. Browse through your options; there will be plenty! Once you've picked what's best for you, click the <strong>Install Now</strong> button and WordPress will download and install the plugin for you.</p> </li> <li> <p>Once WordPress has downloaded and installed the plugin, you'll see a success message which includes links to activate the plugin or return to the plugin installer menu. Plugins need to be activated to work so now go ahead and click <strong>Activate Plugin</strong>.</p> </li> </ol> <p><strong>That's it! You've got your first plugin installed and activated.<br />
+There's nothing more to it than these three steps.</strong></p> <p>It's important to note that every plugin has individual settings and configuration options. Take the time to read any documentation included when setting up one, even if the initial installation is easy!</p> </div> </div> <div class="grid-row group"> <div class="grid-col two-thirds offset-one-sixth"> <hr id="how-to-install-premium" /> <div class="headline"> <h2>How to install a premium plugin using the WordPress dashboard</h2> </div> <div class="img center"> <img src="https://files.namecheap.com/cdn/1124/assets/lp/seo-pages/assets/wordpress-tutorial/wp-how-to-install-a-premium-plugin-using-the-wp-dashboard.jpg" alt="Install a Premium Plugin" /> </div> <p>If you have found a premium plugin that you wish to use, you'll have to install it using the WordPress dashboard. Follow these steps to install and activate a WordPress plugin using the upload option in the admin area:</p> <ol class="numbered-bullets reset-mb"> <li> <p><strong>Download</strong> the plugin from the publisher. This should be <strong>.zip</strong> file.</p> </li> <li> <p>From the WordPress admin area, select <strong>Plugins</strong> and then <strong>Add New</strong>.</p> </li> <li> <p>Click <strong>Upload Plugin</strong> in the top right-hand corner.</p> </li> <li> <p>Click <strong>Choose File</strong>, select the plugin you downloaded and click Install Now. WordPress will now upload the plugin from your computer and install it for you.</p> </li> <li> <p>Once WordPress has installed the plugin, you'll see a <strong>'Plugin installed successfully'</strong> message.</p> </li> <li> <p>Click the <strong>Activate Plugin</strong> link to begin using your new plugin.</p> </li> </ol> </div> </div> <div class="grid-row group"> <div class="grid-col two-thirds offset-one-sixth"> <hr id="Manually-install-a-WordPress-plugin-with-FTP" /> <div class="headline"> <h2>Manually install a WordPress plugin with FTP</h2> </div> <p>Some WordPress hosting providers have file restrictions that limit your ability to install plugins using the dashboard. In this situation, you'll need to install the plugin manually using a file transfer protocol (FTP) program. This is the least beginner-friendly method, but if you stick to these instructions, it will be as pain-free as possible.</p> <ol class="numbered-bullets reset-mb"> <li> <p>The first step is to <strong>download the plugin</strong> and <strong>extract the contents of this .zip</strong> file onto your computer. You'll now have a new folder with the same name. We'll use this to manually upload the plugin to your website with the help of an FTP client.</p> </li> <li> <p><strong>Log in</strong> to your FTP manager. If you don't have your FTP username and password, contact your hosting provider for these details.</p> </li> <li> <p><strong>Open your FTP</strong> client and connect to your website using the same login credentials provided to you from your web host. Now that you're connected, you need to access the plugins path /wp-content/plugins/. </p> </li> <li> <p>It's now time to upload the folder you extracted from the zip file. From your FTP client, locate the folder named after your plugin, right click and select Upload to extract the contents to the /wp-content/plugins/ folder on your web server.</p> </li> <li> <p>Once the files are successfully uploaded, visit the WordPress admin area and click <strong>Plugins</strong>. You'll see your new plugin successfully installed on the plugins page. Select the activation link below the plugin to complete the installation.</p> </li> </ol> </div> </div> <div class="grid-row group"> <div class="grid-col two-thirds offset-one-sixth"> <hr id="After-Installation" /> <div class="headline"> <h2>After Plugin Installation</h2> </div> <p>Once installed and activated, plugins need to be configured to fit your needs. Settings vary from plugin to plugin, with many offering drop-in functionality while others require initial setup and customization. </p> <p>Once your plugins are set up, they will likely not need much if any of your input. We do recommend you check you are running the latest version of each plugin. Keeping plugins updated is essential to keeping your site as secure as possible.</p> </div> </div> <div class="grid-row group"> <div class="grid-col two-thirds offset-one-sixth"> <hr id="best-wordpress-plugins" /> <div class="headline"> <h2>Best WordPress plugins to start with</h2> </div> <p>Plugins come in all shapes and sizes and cover almost every functionality you can imagine. WordPress users can choose from thousands of free versions as well as an assortment of first-class premium versions.</p> <div class="img center"> <img src="https://files.namecheap.com/cdn/1124/assets/lp/seo-pages/assets/wordpress-tutorial/wp-plugins-catalogue.jpg" alt="Add New User" /> </div> <p>WordPress's directory is jam-packed with free and freemium plugins. Head to the Plugins menu in your dash to access any plugin free of charge. Scan through featured and popular plugins or to narrow things down, use the search for the name of the plugin or functionality that you want to install.</p> <p>Most new WordPress users start with on <a href="https://jetpack.com/" target="_blank">Jetpack</a>. This free plugin gives you tools to design, secure and grow your site all from one place. Conveniently, it comes pre-downloaded with your WordPress install.</p> <p>WordPress has a whole lot to offer people that want to create a website. You might have your sights on selling products online. In that case, check out <a href="https://woocommerce.com/" target="_blank">WooCommerce</a>, the world's favorite eCommerce plugin that helps you sell anything. It beautifully and seamlessly integrates with WordPress.</p> <p>Users interested in search engine optimization should take a look at <a href="https://yoast.com/wordpress/plugins/seo/" target="_blank">Yoast SEO</a>; it helps you create better content. The popular  <a href="https://wordpress.org/plugins/google-analytics-for-wordpress/" target="_blank">Google Analytics plugin</a> from Monster Insights is also worth checking out. It gives you useful information about how visitors find and use your website.</p> </div> </div> <div class="grid-row group"> <div class="grid-col two-thirds offset-one-sixth"> <hr id="WordPress-premium-plugins" /> <div class="headline"> <h2>Premium WordPress Plugins</h2> </div> <p>WordPress is a great CMS, but like anything, it's not perfect. WordPress out of the box can't satisfy all users, and that's where third-party plugins come in.</p> <p>There are undeniable advantages to buying a premium plugin, namely additional features, better code quality, technical support and regular updates. Naturally attaching the word Premium doesn't make a plugin a necessary investment or worth the price. Be sure to review the extra features and functionality before making a purchase. Many developers have scalable pricing that allows users to pick based on their needs.</p> <p>WordPress will assist you with putting your content online, but when it comes to organizing your workflow, it falls flat. If you plan on regularly publishing content, we highly recommend considering an editorial calendar plugin. These are popular plugins because they offer a comprehensive tool to keep track of your content marketing, from planning, writing and executing.</p> <p>Unlike the free <a href="https://wordpress.org/plugins/editorial-calendar/" target="_blank">Editorial Calendar</a> (which does a commendable job of covering the basics!), the premium <a href="https://coschedule.com/" target="_blank">CoSchedule</a> editorial calendar goes above and beyond. For a reasonable price, you get help with organization and content strategy needs by facilitating scheduling of blog posts, social media messages, and team tasks, as well as adding social media messages to accompany your latest social media posts.</p> </div> </div> <div id="types-of-ssl-certificate" class="hero group img-min-height" style="background-color: #201a28; background-image: url(https://files.namecheap.com/cdn/1124/assets/img/heroes/heroe-plugin.jpg);"> </div> <!-- SECTION --> <div class="grid-row group" id="essential-plugins"> <div class="grid-col two-thirds offset-one-sixth"> <div class="headline"> <h2>Essential WordPress Plugins</h2> </div> <p>WordPress beginners often get confused trying to pick the best plugins from the thousands available, and endless top ranked lists online only add to the confusion. To ease you into the <a href="https://capsicummediaworks.com/wordpress-plugins/">world of WordPress plugins</a>, we've compiled this list of core plugins, which cover a range of functions most website owners will want to get their website up and running.</p> <div class="headline-subtitle"> <h3>Security plugins</h3> </div> <p>It's impossible to over-stress the importance of <a href="/hosting/wordpress-hosting/wordpress-security/">securing your site</a> and keeping backups in a secure location. Security plugins help keep your site healthy and functioning, especially if you're not using a managed hosting solution. Use these plugins to help everything run smoothly and efficiently.</p> <p>We recommend taking a look at <a href="https://ithemes.com/purchase/backupbuddy/" target="_blank">Backup Buddy</a>. This premium plugin does the same job as the free <a href="https://wordpress.org/plugins/updraftplus/" target="_blank">UpDraftPlus</a> with a whole host of extra features that warrants the $80 annual subscription. It can migrate entire websites to a new server or domain.t also performs a regular backup and will send copies of your site to external services like Dropbox for increased security.</p> <p><a href="https://www.wordfence.com/" target="_blank">Wordfence</a> is a basic yet comprehensive security plugin. It's no problem to set up and adds an extra layer of protection to your site by locking out people who attempt to hack their way in. You'll receive optional email alerts if anything suspicious is going on, and there's a premium version providing support if you want it.</p> <div class="headline-subtitle"> <h3>SEO Plugins</h3> </div> <p>Search engines are the main source of traffic for many websites, so it's important to make your website SEO friendly to help you rank higher. WordPress itself is technically quite a good platform for SEO, but there are plenty of ways to give your site more visibility with the help of WordPress SEO plugins.</p> <p>There are many plugins designed to help with SEO, but as a starting block, <a href="https://wordpress.org/plugins/wordpress-seo/" target="_blank">Yoast</a> comes highly recommended. As mentioned earlier, Yoast offers a complete website optimization package and, best of all, it's easy to install and set up. This plugin provides valuable content analyses, such as how to write titles and descriptions and use keywords in your content, on-page analysis, and so much more. Yoast generates a sitemap that works well, but we recommend using the more dynamic and straight-forward <a href="https://wordpress.org/plugins/google-sitemap-generator/" target="_blank">Google XML Sitemaps</a>.</p> <div class="headline-subtitle"> <h3>Wordpress tables plugin</h3> </div> <p>For such a popular CMS, WordPress still has no built-in table creation function after 12 years of updates. Adding a table manually in WordPress using HTML is still an option, but it is laborious, error-prone and tedious. Thankfully, WordPress has an extensive plugin index, so you don't have to look far to find perfectly adequate table-creating solutions.</p> <p>If you want to insert tables into your WordPress pages and post, you're better off with a plugin. <a href="https://tablepress.org/" target="_blank">TablePress</a> simplifies creating tables within WordPress and adding them to your posts, pages, and even widgets. You can even export your table data if you wish.</p> <p><a href="https://codecanyon.net/item/wpdatatables-tables-and-charts-manager-for-wordpress/3958969?ref=WinningWP" target="_blank">WpDataTables</a> goes about table creation differently. It's one of few that allows you to create a table right in the WordPress visual editor. It's easy to use and supports importing data from CSV files. With this premium plugin, you may also connect to a MySQL table directly from your website database to use as a data source.</p> <div class="headline-subtitle"> <h3>Wordpress email plugins</h3> </div> <p>Managing emails from your WordPress site can be a pain sometimes. By default, your WordPress website’s host is responsible for sending emails from your website and due to some configuration settings on some hosting providers, your WordPress emails may not get delivered. If you experience problems with your email, the fault is most likely down to an issue with your host’s processes.</p> <p>A lot of site owners don't realize they might need SMTP even though most <a href="/hosting/wordpress-hosting/">managed WordPress</a> hosts except Apache and cPanel don't handle email delivery. To solve this problem, you would need a WordPress email plugin called <a href="https://wordpress.org/plugins/wp-mail-smtp/">WP Mail SMTP</a> to bypass the normal flow of email which turns the responsibility from your host to an email specialist. The WP Mail SMTP plugin is a straightforward no-frills option, which explains why it’s one of the most popular free SMTP WordPress plugins available. It has over half a million active installs and good reviews. It works with Gmail, Yahoo, or Hotmail.</p> <div class="headline-subtitle"> <h3>Wordpress gallery plugin</h3> </div> <p>Instead of just sticking images on your website haphazardly and hoping for the best, you can present them in stylish galleries. While WordPress comes with a default gallery feature, it lacks the functionality and aesthetic appeal that most users expect from their site. WordPress users can use gallery plugins rich in customization capabilities, that can enhance your brand.</p> <p>There's hardly a shortage of gallery plugins to use with WordPress right now. At their most basic, plugins give you the ability to insert small images into your posts and pages. There are gallery plugins which can do a whole lot more, from displaying more than one gallery per page to offering animations, lightboxes, navigation and enabling 3D displays. <br />
+To narrow your options, you may choose to opt for a fast, user-friendly plugin with all the features that you need to create a photo gallery suitable for your site. The following three plugins are amongst the most popular and cover a whole host of features suitable for a variety of different site builds.</p> <p><a href="https://en-gb.wordpress.org/plugins/nextgen-gallery/" target="_blank">NextGEN</a> is the most popular gallery plugin in terms of active installs. It also stands out when it comes to features and beats the other two on setting and options, giving you full control over your galleries and options for presenting images in different ways.</p> <p>NextGen may have more installations, but <a href="https://en-gb.wordpress.org/plugins/envira-gallery-lite/" target="_blank">Envira</a> and <a href="https://fooplugins.com/?ref=120" target="_blank">FooGallery</a> have impressive ratings and are just as easy to use. Envira is popular with users because it's fast, easy to use and includes all the essential features. It also makes stunning photo galleries that are fast and fully mobile responsive. FooGallery sits somewhere in between the two plugins. It's got enough features and integrates well with the WordPress backend.</p> <p>One final consideration is speed; If it is not well-coded, a gallery can slow down your website even if you have good WordPress hosting. The speed at which your site loads impacts on the user experience and thus your search engine rankings. The solution is to optimize all of the images appearing on your pages so that they load quickly while maintaining their quality. We recommend using <a href="https://wordpress.org/plugins/wp-smushit/" target="_blank">WP Smush</a>; it's a fast and easy to use image compression plugin.</p> <div class="headline-subtitle"> <h3>WordPress contact form plugins</h3> </div> <p>What's the point of having a website if it's not easy for visitors to contact you? When a site visitor wants to get in touch, they might look for a live chat icon on the bottom right-hand side of the site or an email contact form. With contact form plugins, you can provide visitors with multiple ways to reach out. When a user submits a contact form, it's emailed to the site author (or another address) and with the majority of them, the subject line is tailored to allow easy sorting.</p> <p>You can also use a contact form for creating RSVPs, subscription forms, payment forms, and more. There are a few methods to get one up and running on your WordPress site. You can opt for a built-in table which comes with your chosen theme. If you're technically minded you can create one yourself from scratch, or take the easy option with a plugin. WordPress form plugins simplify everything, providing tools like custom forms, drag and drop fields, SEO pointers, security, entry management and more.</p> <p>If you're a beginner and don't want to spend any money, <a href="https://wpforms.com/" target="_blank">WPForms</a> is the most beginner-friendly, fastest form plugin available. Use it to add mobile-friendly, responsive forms to your site in minutes. You can use pre-built templates to build forms in a few steps or if you prefer, this plugin allows you to create a form yourself using the intuitive drag and drop online form builder. To ensure any spam submissions don't get through, Smart CAPTCHA and the Honeypot method are included. If you need to create more powerful forms, go with the Pro version which saves you learning code or hiring a developer.</p> <div class="headline-subtitle"> <h3>Essential WordPress blogging plugins</h3> </div> <p>There are plenty of WordPress blog plugins to help your blog run more smoothly and efficiently. If you've just started a blog or are an experienced blogger, there are a constant stream of options for making your blog more captivating.</p> <div class="topics-list-block"> <img alt="" src="https://files.namecheap.com/cdn/1124/assets/img/pictograms/300/tools-red-alt.png" /> <div class="topics-list-content"> <h4 class="reset-mt">Blog Maintenance</h4> <p>If you want your blog running smoothly, <a href="https://wordpress.org/plugins/wp-optimize/" target="_blank">WP Optimize</a> is the plugin you need. This plugin optimizes your database tables, gets rid of old post revisions and cleans up anything you've thrown in the trash, such as unapproved comments. By getting rid of unwanted data, and not letting any extra build up, your site runs faster.</p> <p>Since Google and the other search engines are unforgiving when it comes to spam, we recommend an anti-spam plugin, such as <a href="https://wordpress.org/plugins/anti-spam/" target="_blank">Anti-Spam</a>. This plugin stops spam comments in their tracks without annoying your readers who only want to leave a comment by asking questions or using captcha.</p> </div> </div> <div class="topics-list-block"> <img alt="" src="https://files.namecheap.com/cdn/1124/assets/img/pictograms/300/chat-blue-alt.png" /> <div class="topics-list-content"> <h4>Plugins for traffic generation and social sharing</h4> <p>For getting more traffic to your site, these following plugins are must-haves,  covering readers organically sharing your posts to optimal SEO practices. While Yoast is a step in the right direction, it's not all bloggers need to do to help their blog's ranking.</p> <p>Adding the <a href="https://wordpress.org/plugins/google-analytics-dashboard-for-wp/" target="_blank">Google Analytics Dashboard</a> inside your WordPress dash is a great way to look at your stats right inside WordPress. The insights provided can show you what your audience is looking for — and what they’re not.</p> <p>Social sharing plugins encourage visitors to share your content and help it to get seen by a wider audience. Add a social sharing plugin, such as <a href="https://wordpress.org/plugins/frizzly/" target="_blank">Frizzly</a>; its core function is to add social share buttons when a reader hovers over your images, from pins to posts, with the Pinterest pin, the Facebook like and the Twitter share button. With <a href="https://simplesharebuttons.com/wordpress/" target="_blank">Simple Share Buttons Adder</a>, you have the usual option to select the social networks you want to show, plus an additional feature which allows you to upload your custom buttons to match your WordPress theme!</p> </div> </div> <div class="topics-list-block"> <img alt="" src="https://files.namecheap.com/cdn/1124/assets/img/pictograms/300/visibility-green-alt.png" /> <div class="topics-list-content"> <h4>WordPress plugins for subscribers and community building</h4> <p>Don't let your blog stagnate, build a solid strategy for building your subscribers list and creating solid relationships with your readers. The following plugins add personal touches for growing your relationships.</p> <p>You will find lots of options when it comes to forming plugins on your site, but you won't find much better than <a href="http://www.gravityforms.com/" target="_blank">Gravity</a> for blogging. It's a premium app that is worth the money, allowing you to not only create contact forms, but also everything  from surveys, to polls, quizzes and order forms so your visitors can order products directly from your site.</p> <p>Life's too short to hang around a blog waiting for the blogger to reply to a comment, which is why most people you reply to won't be aware you took the time to respond. Never miss a comment by setting up the <a href="https://wordpress.org/plugins/subscribe-to-comments-reloaded/" target="_bla">Subscribe to Comments Reloaded plugin</a>, where readers are notified by email when you've responded to their comments. Chances are, they'll comment again.</p> <p>Another way to encourage your visitors to make more comments on your blog is to reward them for leaving comments. That's where <a href="https://wordpress.org/plugins/disqus-comment-system/" target="_blank">Disqus Comment System</a> comes in. This free plugins is one of the most popular commenting tools for WordPress, and it’s used by many trusted sites from Entertainment Weekly to CBS and Wired. Send your users email and web notifications to keep them coming back and to keep them interested with personalized digests. By keeping users engaged, this powerful plugin can improve your site’s SEO ranking,  while also adding to your site’s user-generated content. </p> </div> </div> </div> </div> <div class="grid-row group alsolike reset-mt"> <hr class="margin-bottom-3_5x" /> <div class="headline"> <h3 class="center">You may also like</h3> </div> <div class="featured-list"> <div class="featured-list-item"> <img src="https://files.namecheap.com/cdn/1124/assets/img/pictograms/300/easywp.png" alt="EasyWP - WordPress Management" /> <h3>WordPress Hosting</h3> <p><strong>Starting at $1</strong></p> <p>Simplicity is freedom! Using EasyWP to set up and manage your site lets you get back to the rest of your business.</p> <a href="/wordpress/" class="btn btn-block">Get WordPress Hosting</a> </div> </div> </div> <div class="grid-row group margin-bottom-2x"> <div class="grid-col"> <hr /> <h4 class="headline-subtitle-related-article center">Further Reading</h4> <div class="related-articles-card-wrapper"> <a class="related-articles-card-item-wrapper" href="/wordpress/how-to-install-wordpress/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">How to install WordPress</p> <p class="related-articles-card-item-text">A review of every way to install WordPress on your website, including automatic and manual methods.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/wordpress-tutorial/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">How to use WordPress</p> <p class="related-articles-card-item-text">This plain English guide to WordPress shows how easy it can be to create and manage a website.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/wordpress-user-accounts/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">How WordPress user accounts work</p> <p class="related-articles-card-item-text">Master your user accounts in minutes with this in-depth look at how they work.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/wordpress-widgets/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">WordPress widgets tutorial</p> <p class="related-articles-card-item-text">Control the design and structure of your site easily with these powerful bits of code.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/how-to-install-wordpress/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">How to install WordPress</p> <p class="related-articles-card-item-text">A review of every way to install WordPress on your website, including automatic and manual methods.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/wordpress-themes/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">Wordpress Themes</p> <p class="related-articles-card-item-text">An in-depth look at what WordPress themes are and how they work.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/wordpress-developer-resources/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">Wordpress Developer Resources</p> <p class="related-articles-card-item-text">This guide to tools and online tutorials can help you take your WordPress websites to the next level.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/wordpress-blog-resources/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">Wordpress Blogging Resources</p> <p class="related-articles-card-item-text">Whether you're just starting out or an experienced writer, these resources can help.</p> </div> </a> <a class="related-articles-card-item-wrapper" href="/wordpress/how-to-optimize-wordpress-site/"> <div class="related-articles-card-item"> <p class="related-articles-card-item-title">Speed up your WordPress website</p> <p class="related-articles-card-item-text">Speed matters in the competitive online world. Learn how to optimize your WordPress site.</p> </div> </a> </div> </div> </div><script>
+$(document).ready(
+    function() {
+       $('.smooth-scroll').click(function(event){
+          event.preventDefault();
+          var $this = $(this);
+          $("html, body").animate({ scrollTop: $($this.attr('href')).position().top }, 600);
+       });
+    }
+);
+</script>
+    
+
+
+
+	
+    <!-- Chat Promo -->
+    
+    
+	<div class="promo-chat">
+		<div class="grid-row group">
+			<div class="grid-col one-half">
+				<p><em>Need help?</em> We&#39;re always here for you.</p>
+			</div>
+			<div class="grid-col one-half">
+                <p><a href="/support/live-chat/general/" target="_blank" class="btn green">Chat with a Live Person</a></p>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- FOOTER CONTENT STARTS-->
+            
+<footer id="footer" >
+    
+	<div class="grid-row">
+		<div class="grid-col one-third">
+
+			<div class="logo"><a href="/"><img src="https://files.namecheap.com/cdn/1124/assets/img/logos/namecheap-dkbg.png" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_footerControl_footerLogo" alt="Namecheap" /></a></div> 
+
+			<div class="about">
+				<p>We make registering, hosting, and managing domains for yourself or others easy and affordable, because the internet needs people.</p>
+				<div tabindex="0" role="button" data-acsb="trigger" class="accessibility d-none-md">
+					Accessibility
+				</div>
+				<p><a href="/about/">Learn more about Namecheap &rarr;</a></p>
+				<p><a href="/blog/">Read our blog &rarr;</a></p>
+			</div>
+
+			<div class="newsletter">
+				<b>Join Our Newsletter &amp; Marketing Communication</b>
+				<p>We&#39;ll send you news and offers.</p>
+				<fieldset>
+					<!-- SUBSCRIBE BUTTON STARTS--><input type="email" name="email" placeholder="you@yours.com"><!--
+					--><button type="button" class="ncRedirectButton btn" value="eyJ1IjoiL25ld3NsZXR0ZXIvTmV3c2xldHRlclN1YnNjcmliZS5hc3B4IiwibSI6IkdFVCIsImIiOiJGYWxzZSIsInMiOiJmaWVsZHNldCIsInAiOiBbeyJuIjoiZW1haWwiLCJ2IjoiIiwiZiI6ImVtYWlsIn0seyJuIjoiYWN0aW9uIiwidiI6InN1YnNjcmliZSIsImYiOiIifV19" name="ctl00$ctl00$ctl00$ctl00$base_content$web_base_content$footerControl$newsletterSubmit$actionObjectPlaceHolder">Join</button>
+
+<!-- SUBSCRIBE BUTTON ENDS-->
+				</fieldset>
+			</div><!-- .newsletter -->
+
+			<ul class="social">
+				<li class="twitter"><a href="https://twitter.com/namecheap">Twitter</a></li>
+				<li class="facebook"><a href="https://www.facebook.com/NameCheap">Facebook</a></li>
+				<li class="instagram"><a href="https://www.instagram.com/namecheap/">Instagram</a></li>
+				<li class="pinterest"><a href="https://www.pinterest.com/namecheap/">Pinterest</a></li>
+			</ul><!-- .social -->
+
+		</div>
+
+    	
+        <nav class="grid-col one-sixth offset-one-sixth"  role="navigation">
+            
+               <b class=" get-started">
+                     <a href="/domains/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Domains', 'click', 'domains');">
+						Domains
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/domains/domain-name-search/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Domain Name Search', 'click', 'domain name search');">
+						Domain Name Search
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/domains/transfer/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Domain Transfer', 'click', 'domain transfer');">
+						Domain Transfer
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/domains/new-tlds/explore/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:New TLDs', 'click', 'new tlds');">
+						New TLDs
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/domains/personal/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Personal Domain', 'click', 'personal domain');">
+						Personal Domain
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/domains/marketplace/buy-domains/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Marketplace', 'click', 'marketplace');">
+						Marketplace
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/domains/whois/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Whois Lookup', 'click', 'whois lookup');">
+						Whois Lookup
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/premiumdns/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:PremiumDNS', 'click', 'premiumdns');">
+						PremiumDNS
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/domains/freedns/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:FreeDNS', 'click', 'freedns');">
+						FreeDNS
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/hosting/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Hosting', 'click', 'hosting');">
+						Hosting
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/hosting/shared/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Shared Hosting', 'click', 'shared hosting');">
+						Shared Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/wordpress/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:WordPress Hosting', 'click', 'wordpress hosting');">
+						WordPress Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/reseller/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Reseller Hosting', 'click', 'reseller hosting');">
+						Reseller Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/vps/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:VPS Hosting', 'click', 'vps hosting');">
+						VPS Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/dedicated-servers/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Dedicated Servers', 'click', 'dedicated servers');">
+						Dedicated Servers
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/email/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Private Email Hosting', 'click', 'private email hosting');">
+						Private Email Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/hosting-migrate-to-namecheap/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Migrate to Namecheap', 'click', 'migrate to namecheap');">
+						Migrate to Namecheap
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/wordpress/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:WordPress', 'click', 'wordpress');">
+						WordPress
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/hosting/shared/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Shared Hosting', 'click', 'shared hosting');">
+						Shared Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/wordpress/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:WordPress Hosting', 'click', 'wordpress hosting');">
+						WordPress Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/migrate-wordpress/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Migrate WordPress', 'click', 'migrate wordpress');">
+						Migrate WordPress
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+        </nav>
+    
+        <nav class="grid-col one-sixth "  role="navigation">
+            
+               <b class=" get-started">
+                     <a href="/security/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Security', 'click', 'security');">
+						Security
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/security/domain-privacy/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Domain Privacy', 'click', 'domain privacy');">
+						Domain Privacy
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/premiumdns/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:PremiumDNS', 'click', 'premiumdns');">
+						PremiumDNS
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/vpn/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:VPN', 'click', 'vpn');">
+						VPN
+						<span class="gb-badge gb-badge--new-item new-badge">UPDATED</span>
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/2fa-two-factor-authentication/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:2FA', 'click', '2fa');">
+						2FA
+						
+					  </a>
+                         </li>
+                        
+                            <li class="feedback ">
+                                <a href="/dns/free-public-dns/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Public DNS', 'click', 'public dns');">
+						Public DNS
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/domains/transfer/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Transfer to Us', 'click', 'transfer to us');">
+						Transfer to Us
+						<span class="gb-badge gb-badge--new-item gb-badge--info tryme-badge">TRY ME</span>
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/domains/transfer/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Domain Transfer', 'click', 'domain transfer');">
+						Domain Transfer
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/hosting-migrate-to-namecheap/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Migrate Hosting', 'click', 'migrate hosting');">
+						Migrate Hosting
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/migrate-wordpress/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Migrate WordPress', 'click', 'migrate wordpress');">
+						Migrate WordPress
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/email/migrate-email/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Migrate Email', 'click', 'migrate email');">
+						Migrate Email
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/security/ssl-certificates/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:SSL Certificates', 'click', 'ssl certificates');">
+						SSL Certificates
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/comodo/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Comodo', 'click', 'comodo');">
+						Comodo
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/organization-validation/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Organization Validation', 'click', 'organization validation');">
+						Organization Validation
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/domain-validation/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Domain Validation', 'click', 'domain validation');">
+						Domain Validation
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/extended-validation/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Extended Validation', 'click', 'extended validation');">
+						Extended Validation
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/single-domain/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Single Domain', 'click', 'single domain');">
+						Single Domain
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/wildcard/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Wildcard', 'click', 'wildcard');">
+						Wildcard
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/security/ssl-certificates/multi-domain/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Multi-Domain', 'click', 'multi-domain');">
+						Multi-Domain
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/resellers/ssl-certificates/join-the-program/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Resellers', 'click', 'resellers');">
+						Resellers
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/resellers/ssl-certificates/join-the-program/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:SSL Certificates', 'click', 'ssl certificates');">
+						SSL Certificates
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/hosting/reseller/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Reseller Hosting', 'click', 'reseller hosting');">
+						Reseller Hosting
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/promos/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Promos', 'click', 'promos');">
+						Promos
+						
+					  </a>
+                </b>    
+                
+        </nav>
+    
+        <nav class="grid-col one-sixth "  role="navigation">
+            
+               <b class="feedback get-started">
+                     <a href="/guru-guides/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Guru Guides', 'click', 'guru guides');">
+						Guru Guides
+						
+					  </a>
+                </b>    
+                
+               <b class=" get-started">
+                     <a href="/help-center/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Help Center', 'click', 'help center');">
+						Help Center
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/status-updates/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Status Updates', 'click', 'status updates');">
+						Status Updates
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/support/knowledgebase/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Knowledgebase', 'click', 'knowledgebase');">
+						Knowledgebase
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/support/knowledgebase/category/2253/howto-videos/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:How-To Videos', 'click', 'how-to videos');">
+						How-To Videos
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="https://support.namecheap.com/index.php?/Tickets/Submit"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Submit Ticket', 'click', 'submit ticket');">
+						Submit Ticket
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/help-center/live-chat/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Live Chat', 'click', 'live chat');">
+						Live Chat
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/support/knowledgebase/article.aspx/9196/5/how-and-where-can-i-file-abuse-complaints"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Report Abuse', 'click', 'report abuse');">
+						Report Abuse
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class=" get-started">
+                     <a href="/apps/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Apps', 'click', 'apps');">
+						Apps
+						
+					  </a>
+                </b>    
+                
+                    <ul>
+                        
+                            <li >
+                                <a href="/apps/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Marketplace', 'click', 'marketplace');">
+						Marketplace
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/supersonic-cdn/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:CDN', 'click', 'cdn');">
+						CDN
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/visual/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Visual', 'click', 'visual');">
+						Visual
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/visual/site-maker/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Site Maker', 'click', 'site maker');">
+						Site Maker
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/logo-maker/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Logo Maker', 'click', 'logo maker');">
+						Logo Maker
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/visual/card-maker/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Business Card Maker', 'click', 'business card maker');">
+						Business Card Maker
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/id-validation/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:ID Validation', 'click', 'id validation');">
+						ID Validation
+						
+					  </a>
+                         </li>
+                        
+                            <li >
+                                <a href="/apps/subscriptions"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Subscriptions', 'click', 'subscriptions');">
+						Subscriptions
+						
+					  </a>
+                         </li>
+                        
+                    </ul>
+                
+               <b class="feedback get-started">
+                     <a href="/careers/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Careers', 'click', 'careers');">
+						Careers
+						
+					  </a>
+                </b>    
+                
+               <b class="feedback get-started">
+                     <a href="/affiliates/"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Affiliates', 'click', 'affiliates');">
+						Affiliates
+						
+					  </a>
+                </b>    
+                
+               <b class="feedback get-started">
+                     <a href="https://support.namecheap.com/index.php?/Tickets/Submit/RenderForm/59"  onclick = "if (typeof (LogGAEvent) === 'function') LogGAEvent('Footer:Send us Feedback', 'click', 'send us feedback');">
+						Send us Feedback
+						
+					  </a>
+                </b>    
+                
+               <b class=" get-started">
+                     <div tabindex="0" role="button" data-acsb="trigger" class="accessibility">Accessibility</div>
+                </b>    
+                
+        </nav>
+    
+
+	</div><!-- .grid-row -->
+    
+
+    
+
+	<div class="legal" role="contentinfo">
+		<p class="copyright">The entirety of this site is protected by <span>copyright &copy; 2000–2021 Namecheap, Inc.</span>
+        	<span class=""address">4600 East Washington Street, Suite 305, Phoenix, AZ 85034, USA</span>
+        </p>
+		<ul>
+			
+			<li><a href="/legal/">Terms and Conditions</a></li>
+			<li><a href="/legal/general/privacy-policy/">Privacy Policy</a></li>
+			<li><a href="/legal/domains/udrp/"><abbr title="Uniform Domain Name Dispute Resolution Policy">UDRP</abbr></a></li>
+		</ul>
+	</div><!-- .legal -->
+
+    <div class="causes">
+		<div>
+			<b>We Support</b>
+			<div class="img-eff"></div>
+			<div class="img-fftf"></div>
+		</div>
+	</div>
+
+	<div class="certifications">
+
+		<!-- ICANN -->
+		<p class="icann">We are an <abbr title="Internet Corporation for Assigned Names and Numbers">ICANN</abbr> accredited registrar. <em>Serving customers since 2001.</em></p>
+
+		<!-- Payment Options -->
+		<dl>
+			<dt>Payment Options</dt>
+			<dd title="American Express" class="american-express">American Express</dd><!--
+			--><dd title="Bitcoin" class="bitcoin">Bitcoin</dd><!--
+			--><!--<dd title="Google Wallet" class="google-wallet">Google Wallet</dd>--><!--
+			--><dd title="MasterCard" class="mastercard">MasterCard</dd><!--
+			--><dd title="PayPal" class="paypal">PayPal</dd><!--
+			--><dd title="Visa" class="visa">Visa</dd><!--
+			--><dd title="Discover" class="discover">Discover</dd>
+		</dl>
+
+		<!-- Security and Privacy Certifications -->
+		<ul>
+            <li class="item-sectigo">
+                <a href="https://secure.trust-provider.com/ttb_searcher/trustlogo?v_querytype=W&v_shortname=SECEV&v_search=https://www.namecheap.com/&x=6&y=5" 
+					target="_blank" rel=""><!--
+                                --><img src="https://files.namecheap.com/cdn/1124/assets/img/logos/sectigo_trust_seal_md_2x.png" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_footerControl_Sentigo" oncontextmenu="return false;" alt="Sentigo" style="border: none" />
+                </a>
+            </li>
+            <li>
+                <a href="https://nc1.app.link/W1qV0gjLZG" target="_blank" rel="" title="Android app on google play"><!--
+                                --><img src="https://files.namecheap.com/cdn/1124/assets/img/logos/googleplay.png" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_footerControl_GooglePlay" oncontextmenu="return false;" alt="Android app on google play" style="border: none" />
+                </a>
+            </li>
+
+            <li>
+                <a href="https://nc1.app.link/W1qV0gjLZG" target="_blank" rel="" title="iOS App Store"><!--
+                                --><img src="https://files.namecheap.com/cdn/1124/assets/img/logos/appstore.png" id="ctl00_ctl00_ctl00_ctl00_base_content_web_base_content_footerControl_iOSStore" oncontextmenu="return false;" alt="iOS App Store" style="border: none" />
+                </a>
+            </li>
+
+		</ul>
+
+	</div><!-- .certifications -->
+</footer>
+
+   
+    
+    <div id="dock">
+		<a href="#" class="close">Ã— Close</a>
+	</div>
+    
+	<div id="bottomSeoFooter">
+	
+    
+
+	</div>
+
+	<div id="bottomSpacer"></div>
+
+	<!-- FOOTER CONTENT ENDS -->
+
+
+    <script type="text/javascript" src="https://files.namecheap.com/cdn/0/assets/js/v1124.global-script.min.js"></script>
+
+	
+	
+
+	<script type="text/javascript">
+	 $(document).ready(function () {
+            if (window.location.hostname != "www.namecheap.com") { $("div.VerisignSealDiv").hide(); }           
+	    });
+	</script>
+    
+	
+	
+    
+    
+
+	
+
+	<script type="text/javascript">
+	 var _gaq = _gaq || [];
+	</script>
+    <script>
+	 $('body').on('click', function(e) {
+		 if ($('.expandable.shopping-cart').hasClass('expanded')) {
+			if (!$(e.target).parents().andSelf().is('.expandable.shopping-cart')) {
+				$('.expandable.shopping-cart').removeClass('expanded');				
+			}
+		}		
+		
+		if ($('#header .shopping-cart .panel').css('display') == 'block') {
+			if(!$(e.target).parents().andSelf().is('.expandable.shopping-cart'))
+			{
+				$('#header .shopping-cart .panel').removeAttr('style');
+			}	
+		}
+	});	
+	
+	function addCartAjax() {
+    $.ajax({
+    	"url": "/cart/json/operation.aspx/GetSubtotalPriceText",
+        type: 'post',
+        contentType: 'application/json',
+        dataType: 'json'
+    }).done(function(data){     	 	
+	 	if (data.d) {
+	 	    $('.cart-dollar-value').text(data.d);
+	 	    $('.icon-cart').addClass('icon-cart-full');
+	 	    $('.expandable.shopping-cart').removeClass('empty');
+	 	    $('.expandable.shopping-cart').addClass('expanded');
+			$('#header .shopping-cart .panel').css('display', 'block');
+	 	}	
+    }).fail(function(){});
+  }
+  
+  
+        function shoppingCartUpdated()
+        {
+            addCartAjax();		    
+        }
+   
+        document.addEventListener('shoppingCartUpdated', shoppingCartUpdated);
+    </script>   
+
+	
+	</form>
+    <form id="clientForm" action=""></form>
+    <script type="text/javascript">
+        userAllowedScripsProcessor.activateUserAllowedScripts();
+    </script>    
+    
+<!-- Footer Extra Content Start -->
+<script src="https://cdn.engagement.ai/production/static/js/loader/chatLoader.v1.js" type="text/javascript" asynccrossorigin="anonymous"></script>
+<!-- Footer Extra Content End -->
+
+</body>
+</html>

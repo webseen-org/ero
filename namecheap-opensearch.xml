@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Namecheap.com Domain Search</ShortName>
+  <Description>Search for domain availability on Namecheap</Description>
+  <Tags>namecheap domain search</Tags>
+  <Image height="16" width="16" type="image/vnd.microsoft.icon">http://www.namecheap.com/favicon.ico</Image>
+  <Url type="text/html" template="http://www.namecheap.com/domains/domain-name-search/results.aspx?domain={searchTerms}&amp;utm_source=opensearch" />
+  <Query role="example" searchTerms="example.com" />
+</OpenSearchDescription>
