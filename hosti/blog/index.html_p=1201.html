@@ -1,0 +1,1014 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>Improving Website Performance with LiteSpeed</title><style id="rocket-critical-css">:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#5533ff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#f5f5f5;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--breakpoint-xxl:1440px;--font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,*::before,*::after{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h1,h4{margin-top:0;margin-bottom:0px}p{margin-top:0;margin-bottom:1rem}ul{margin-top:0;margin-bottom:1rem}a{color:#5533ff;text-decoration:none;background-color:transparent}img{vertical-align:middle;border-style:none}input,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}input{overflow:visible}textarea{overflow:auto;resize:vertical}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h1,h4{margin-bottom:0px;font-weight:500;line-height:1.2}h1{font-size:2.5rem}h4{font-size:1.5rem}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.col-12,.col-lg-1,.col-lg-3,.col-lg-8{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-12{-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.order-0{-webkit-box-ordinal-group:1;order:0}.order-1{-webkit-box-ordinal-group:2;order:1}.order-2{-webkit-box-ordinal-group:3;order:2}@media (min-width:992px){.col-lg-1{-webkit-box-flex:0;flex:0 0 8.33333%;max-width:8.33333%}.col-lg-3{-webkit-box-flex:0;flex:0 0 25%;max-width:25%}.col-lg-8{-webkit-box-flex:0;flex:0 0 66.66667%;max-width:66.66667%}.order-lg-0{-webkit-box-ordinal-group:1;order:0}.order-lg-1{-webkit-box-ordinal-group:2;order:1}}.collapse:not(.show){display:none}.navbar-collapse{flex-basis:100%;-webkit-box-flex:1;flex-grow:1;-webkit-box-align:center;align-items:center}.navbar-toggler{padding:0.25rem 0.75rem;font-size:1.25rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:0.25rem}.bg-white{background-color:#fff!important}.border-0{border:0!important}.d-none{display:none!important}.d-flex{display:-webkit-box!important;display:flex!important}@media (min-width:1200px){.d-xl-none{display:none!important}.d-xl-flex{display:-webkit-box!important;display:flex!important}}.flex-row{-webkit-box-orient:horizontal!important;-webkit-box-direction:normal!important;flex-direction:row!important}.flex-column{-webkit-box-orient:vertical!important;-webkit-box-direction:normal!important;flex-direction:column!important}.flex-wrap{flex-wrap:wrap!important}.justify-content-center{-webkit-box-pack:center!important;justify-content:center!important}.align-items-center{-webkit-box-align:center!important;align-items:center!important}@media (min-width:992px){.flex-lg-row{-webkit-box-orient:horizontal!important;-webkit-box-direction:normal!important;flex-direction:row!important}.flex-lg-column{-webkit-box-orient:vertical!important;-webkit-box-direction:normal!important;flex-direction:column!important}.justify-content-lg-start{-webkit-box-pack:start!important;justify-content:flex-start!important}.align-items-lg-start{-webkit-box-align:start!important;align-items:flex-start!important}}.position-relative{position:relative!important}.w-100{width:100%!important}.mb-0{margin-bottom:0!important}.ml-2{margin-left:0.5rem!important}.mr-auto{margin-right:auto!important}.ml-auto{margin-left:auto!important}@media (min-width:992px){.ml-lg-4{margin-left:1.5rem!important}.pr-lg-4{padding-right:1.5rem!important}}.text-center{text-align:center!important}@media (min-width:992px){.text-lg-left{text-align:left!important}}.text-uppercase{text-transform:uppercase!important}.font-weight-bold{font-weight:700!important}.text-white{color:#fff!important}img.wp-post-image,img{max-width:100%;height:auto}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale;-webkit-font-feature-settings:'liga';font-feature-settings:'liga'}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale;-webkit-font-feature-settings:'liga';font-feature-settings:'liga'}html,body{font-size:10px;font-family:'Muli',sans-serif;font-weight:400;font-style:normal;color:#2F1C6A}p,h1,h4{overflow-wrap:anywhere}p,ul{margin-bottom:0;padding-left:0}li{list-style-type:none}a{text-decoration:unset;color:unset}h1{letter-spacing:0}h1{font-size:4.8rem;line-height:6rem}@media (max-width:991.98px){h1{font-size:3.6rem;line-height:4.8rem}}@media (max-width:767.98px){h1{font-size:3.0rem;line-height:3.6rem}}h4{font-size:1.8rem;line-height:2.4rem}.label{font-size:1.4rem;letter-spacing:0;line-height:2.4rem}.dark{background-color:#F5F5F5}.text-h-primary{color:#6747C7}.text-light-black{color:#43414F}.text-content-grey{color:#999999}.dark{color:rgba(0,0,0,0.87)}.primary{background-color:#6747C7;color:white}.primary.l700{color:rgba(255,255,255,0.87)}.primary.l700{background-color:#4F3AB7}.w-100{width:100%!important}.mb-0{margin-bottom:0px!important}a{color:unset;font-weight:700}img{height:inherit!important}@media (min-width:992px){.translateY-m-8rem{-webkit-transform:translateY(-8rem);transform:translateY(-8rem)}}.shadow-box{border-radius:3px;box-shadow:0 4px 9px 0 rgba(67,65,79,0.1)}.mobile-m-holder{top:55px;width:100%;left:0px;padding-left:15px;position:absolute!important}#submenu,#searchbox{top:68px;margin-bottom:68px;z-index:100}@media (min-width:1200px){#submenu,#searchbox{top:75px;margin-bottom:75px}}.h-p-0{padding:0rem!important}.h-pl-0{padding-left:0rem!important}.h-mb-1{margin-bottom:1rem!important}.h-pl-1{padding-left:1rem!important}.h-pr-1{padding-right:1rem!important}.h-mt-2{margin-top:2rem!important}.h-mr-2{margin-right:2rem!important}.h-p-2{padding:2rem!important}.h-pt-2{padding-top:2rem!important}.h-pb-2{padding-bottom:2rem!important}.h-mt-3{margin-top:3rem!important}.h-mb-3{margin-bottom:3rem!important}.h-mr-3{margin-right:3rem!important}.h-pb-3{padding-bottom:3rem!important}.h-pl-3{padding-left:3rem!important}.h-pr-3{padding-right:3rem!important}.h-pt-4{padding-top:4rem!important}.h-pb-4{padding-bottom:4rem!important}.h-pt-5{padding-top:5rem!important}@media (min-width:992px){.h-mt-0-lg{margin-top:0rem!important}.h-p-0-lg{padding:0rem!important}.h-pl-0-lg{padding-left:0rem!important}.h-mb-3-lg{margin-bottom:3rem!important}.h-pt-4-lg{padding-top:4rem!important}.h-p-5-lg{padding:5rem!important}.h-pb-10-lg{padding-bottom:10rem!important}}#post a{color:#6747C7}#post p:not(.post-info){font-size:1.4rem;line-height:2.4rem;font-weight:normal;margin-bottom:2.4rem}@media (max-width:991.98px){#post p:not(.post-info){margin-bottom:1.5rem}}#post h1{font-size:4.8rem;line-height:6rem;font-weight:bold;margin-bottom:2.4rem}@media (max-width:991.98px){#post h1{font-size:3.6rem;line-height:4.8rem;margin-bottom:1.5rem}}@media (max-width:767.98px){#post h1{font-size:3.0rem;line-height:3.6rem}}.height-inherit{height:inherit}.object-fit-cover{-o-object-fit:cover;object-fit:cover}@media (max-width:767.98px){#top-stories-sidebar{padding-right:0}}.letter-spacing-1px{letter-spacing:1px}.holder-shadow{box-shadow:0 2px 2px 0 rgba(0,0,0,0.24),0 0 2px 0 rgba(0,0,0,0.12)}.searchbox-holder{padding:1.5rem;position:relative;display:none}.height-16px{height:16px}.height-15rem{height:15rem}.height-100p{height:100%}.min-width-100p{min-width:100%}@media (min-width:992px){.social-sticky{position:-webkit-sticky;position:sticky;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;top:105px}}.copy-link{position:absolute;bottom:0;color:#595959;font-size:14px;font-weight:normal;white-space:nowrap;height:34px;border-radius:3px;box-shadow:0 2px 4px 0 rgba(0,0,0,0.1);background-color:#f0edfa;text-align:center;padding:7px 5px 0 5px}.copied-link{position:absolute;bottom:0;color:#ffffff;font-size:14px;font-weight:normal;white-space:nowrap;height:34px;border-radius:3px;box-shadow:0 2px 4px 0 rgba(0,0,0,0.1);background-color:#16bc55;text-align:center;padding:7px 5px 0 5px}@media (max-width:991px){.copied-link,.copy-link{top:-5px;z-index:1}}</style>
+<meta name="description" content="Introducing LiteSpeed at Hostinger. LiteSpeed performance improvement, advanced-cache, and LiteSpeed Cache plugin." />
+<link rel="canonical" href="index.html%3Fp=1201.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Improving Website Performance with LiteSpeed" />
+<meta property="og:description" content="Introducing LiteSpeed at Hostinger. LiteSpeed performance improvement, advanced-cache, and LiteSpeed Cache plugin." />
+<meta property="og:url" content="https://www.hostinger.com/blog/introducing-litespeed" />
+<meta property="og:site_name" content="Hostinger Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/Hostinger/" />
+<meta property="article:published_time" content="2019-07-29T03:57:55+00:00" />
+<meta property="article:modified_time" content="2021-08-03T14:46:25+00:00" />
+<meta property="og:image" content="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed.png" />
+<meta property="og:image:width" content="1110" />
+<meta property="og:image:height" content="454" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@HostingerCOM" />
+<meta name="twitter:site" content="@HostingerCOM" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Aurimas Lapienė" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="4 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.hostinger.com/blog/#organization","name":"Hostinger","url":"https://www.hostinger.com/blog/","sameAs":["https://www.facebook.com/Hostinger/","https://www.linkedin.com/company/hosting-media-hostinger-global-","https://twitter.com/HostingerCOM"],"logo":{"@type":"ImageObject","@id":"https://www.hostinger.com/blog/#logo","inLanguage":"en-US","url":"https://www.hostinger.com/blog/wp-content/uploads/sites/4/2017/03/hostinger-logo-2.png","contentUrl":"https://www.hostinger.com/blog/wp-content/uploads/sites/4/2017/03/hostinger-logo-2.png","width":211,"height":65,"caption":"Hostinger"},"image":{"@id":"https://www.hostinger.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.hostinger.com/blog/#website","url":"https://www.hostinger.com/blog/","name":"Hostinger Blog","description":"","publisher":{"@id":"https://www.hostinger.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.hostinger.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.hostinger.com/blog/introducing-litespeed#primaryimage","inLanguage":"en-US","url":"https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed.png","contentUrl":"https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed.png","width":1110,"height":454},{"@type":"WebPage","@id":"https://www.hostinger.com/blog/introducing-litespeed#webpage","url":"https://www.hostinger.com/blog/introducing-litespeed","name":"Improving Website Performance with LiteSpeed","isPartOf":{"@id":"https://www.hostinger.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.hostinger.com/blog/introducing-litespeed#primaryimage"},"datePublished":"2019-07-29T03:57:55+00:00","dateModified":"2021-08-03T14:46:25+00:00","description":"Introducing LiteSpeed at Hostinger. LiteSpeed performance improvement, advanced-cache, and LiteSpeed Cache plugin.","breadcrumb":{"@id":"https://www.hostinger.com/blog/introducing-litespeed#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.hostinger.com/blog/introducing-litespeed"]}]},{"@type":"BreadcrumbList","@id":"https://www.hostinger.com/blog/introducing-litespeed#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.hostinger.com/blog/"},{"@type":"ListItem","position":2,"name":"Improving Website Performance with LiteSpeed"}]},{"@type":"Article","@id":"https://www.hostinger.com/blog/introducing-litespeed#article","isPartOf":{"@id":"https://www.hostinger.com/blog/introducing-litespeed#webpage"},"author":{"@id":"https://www.hostinger.com/blog/#/schema/person/5a7f42a82319a0b8e898d9d4d1aad5ca"},"headline":"Improving Website Performance with LiteSpeed","datePublished":"2019-07-29T03:57:55+00:00","dateModified":"2021-08-03T14:46:25+00:00","mainEntityOfPage":{"@id":"https://www.hostinger.com/blog/introducing-litespeed#webpage"},"wordCount":758,"commentCount":20,"publisher":{"@id":"https://www.hostinger.com/blog/#organization"},"image":{"@id":"https://www.hostinger.com/blog/introducing-litespeed#primaryimage"},"thumbnailUrl":"https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed.png","articleSection":["Engineering"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.hostinger.com/blog/introducing-litespeed#respond"]}]},{"@type":"Person","@id":"https://www.hostinger.com/blog/#/schema/person/5a7f42a82319a0b8e898d9d4d1aad5ca","name":"Aurimas Lapien\u0117","image":{"@type":"ImageObject","@id":"https://www.hostinger.com/blog/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/42697c2de58aa17524470c5e524da5ae?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/42697c2de58aa17524470c5e524da5ae?s=96&d=mm&r=g","caption":"Aurimas Lapien\u0117"},"url":"https://www.hostinger.com/blog/author/aurimaslapiene"}]}</script>
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Hostinger Blog &raquo; Feed" href="feed.html" />
+<link rel="alternate" type="application/rss+xml" title="Hostinger Blog &raquo; Comments Feed" href="comments/feed.html" />
+<link rel="alternate" type="application/rss+xml" title="Hostinger Blog &raquo; Improving Website Performance with LiteSpeed Comments Feed" href="introducing-litespeed/feed.html" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='preload' href='wp-includes/css/dist/block-library/style.min.css%3Fver=5.8.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link data-minify="1" rel='preload' href='wp-content/cache/min/4/blog/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css%3Fver=1628249671.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload' href='wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css%3Fver=3.1.16.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload' href='wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css%3Fver=5.8.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link data-minify="1" rel='preload' href='wp-content/cache/min/4/blog/wp-content/themes/blogtheme/public/css/theme.min.css%3Fver=1628249671.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload' href='wp-content/plugins/enlighter/cache/X4_enlighterjs.min.css%3Fver=WS7smgxFdjTI98C.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload' href='wp-content/plugins/wp-gdpr-compliance/assets/css/front.min.css%3Fver=1613720712.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<style id='wpgdprc.css-inline-css' type='text/css'>
+
+            div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:before { content: 'Yes'; }
+            div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:after { content: 'No'; }
+        
+</style>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.min.js%3Fver=3.6.0' id='jquery-core-js' defer></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js%3Fver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' src='wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js%3Fver=5.8' id='ppress-flatpickr-js' defer></script>
+<script type='text/javascript' src='wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js%3Fver=5.8' id='ppress-select2-js' defer></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" type="application/json" href="wp-json/wp/v2/posts/1201" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hostinger.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='index.html%3Fp=1201.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fwww.hostinger.com%252Fblog%252Fintroducing-litespeed" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fwww.hostinger.com%252Fblog%252Fintroducing-litespeed&amp;format=xml" />
+<script data-rocketlazyloadscript='data:text/javascript;base64,KGZ1bmN0aW9uKHcsZCxzLGwsaSl7d1tsXT13W2xdfHxbXTt3W2xdLnB1c2goeydndG0uc3RhcnQnOg0KbmV3IERhdGUoKS5nZXRUaW1lKCksZXZlbnQ6J2d0bS5qcyd9KTt2YXIgZj1kLmdldEVsZW1lbnRzQnlUYWdOYW1lKHMpWzBdLA0Kaj1kLmNyZWF0ZUVsZW1lbnQocyksZGw9bCE9J2RhdGFMYXllcic/JyZsPScrbDonJztqLmFzeW5jPXRydWU7ai5zcmM9DQonaHR0cHM6Ly93d3cuZ29vZ2xldGFnbWFuYWdlci5jb20vZ3RtLmpzP2lkPScraStkbDtmLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGosZik7DQp9KSh3aW5kb3csZG9jdW1lbnQsJ3NjcmlwdCcsJ2RhdGFMYXllcicsJ0dUTS1LTDRGUVZHJyk7'></script><link rel="icon" href="wp-content/uploads/sites/4/2017/04/cropped-hostinger-fav-32x32.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/sites/4/2017/04/cropped-hostinger-fav-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/uploads/sites/4/2017/04/cropped-hostinger-fav-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2017/04/cropped-hostinger-fav-270x270.png" />
+<style type="text/css" id="wp-custom-css">
+			.aligncenter {
+	    display: block;
+}
+
+.col-12.col-xl-7.h-p-0 {
+  display:flex;
+}
+.col-12.col-xl-7.h-p-0 > img {
+  object-fit:cover;
+}
+
+.crayon-theme-classic {
+	margin-bottom:2.4rem!important;
+}
+
+#post figcaption {
+    text-align: center;
+}
+
+#post p:not(.post-info), #post ol, #post ul {
+    font-size: 1.8rem;
+    line-height: 3.3rem;
+}
+
+#post h2 {
+    line-height: 3.8rem;
+}		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script>
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+<body class="post-template-default single single-post postid-1201 single-format-standard wp-embed-responsive">
+<div id="navigation-new">
+<hmenu-new :menu-items='[{"title":"Website Builder","href":"\/website-builder","id":"hgr-tutorials-h-menu-item-website-builder","material":"view_compact"},{"title":"Hosting","dropDown":true,"items":[{"title":"Shared Web Hosting","text":"For small to medium websites.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/hosting\/shared-hosting.svg","href":"\/web-hosting","id":"hgr-tutorials-h-menu-item-web-hosting"},{"title":"Cloud Hosting","text":"For large scale projects.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/hosting\/cloud-hosting.svg","href":"\/cloud-hosting","id":"hgr-tutorials-h-menu-item-cloud-hosting"},{"title":"Email Hosting","text":"Promote your business with every outreach.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/hosting\/email-hosting.svg","href":"\/email-hosting","id":"hgr-tutorials-h-menu-item-email-hosting"},{"title":"WordPress Hosting","text":"Optimized solutions for WordPress hosting.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/hosting\/wordpress-hosting.svg","href":"\/wordpress-hosting","id":"hgr-tutorials-h-menu-item-wp-hosting"}]},{"title":"VPS","dropDown":true,"items":[{"title":"VPS Hosting","text":"Dedicated resources to scale.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/vps\/vps-hosting.svg","href":"\/vps-hosting","id":"hgr-tutorials-h-menu-item-vps-hosting"},{"title":"Minecraft Hosting","text":"Share your Minecraft experience.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/vps\/minecraft-hosting.svg","href":"\/minecraft-server-hosting","id":"hgr-tutorials-h-menu-item-minecraft-hosting"}]},{"title":"Domain","dropDown":true,"items":[{"title":"Domain Checker","text":"Find the perfect domain name.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/domain\/domain-checker.svg","href":"\/domain-checker","id":"hgr-tutorials-h-menu-item-domain-checker"},{"title":"WHOIS Database","text":"Lookup tool to find WHOIS information.","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/domain\/whois-database.svg","href":"\/whois","id":"hgr-tutorials-h-menu-item-whois"},{"title":"Domain Transfer","text":"Want to transfer domain to Hostinger?","logo":"https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/icons\/navbar-icons\/domain\/domain-transfer.svg","href":"\/transfer-domain","id":"hgr-tutorials-h-menu-item-transfer-domain"}]},{"title":"Pricing","href":"\/pricing","id":"hgr-tutorials-h-menu-item-pricing","material":"attach_money"},{"title":"Why Us","href":"\/why-us","id":"hgr-tutorials-h-menu-item-why-us","material":"people"},{"title":"Client area","href":"\/cpanel-login","nameIsLogin":true,"id":"hgr-tutorials-h-menu-item-cpanel-login","material":"lock"}]' cart-path="/cart" home-path="/" blog-path="https://www.hostinger.com/blog" blog-name="Blog" cart="Cart" theme-tld=".com">
+</hmenu-new>
+</div>
+<div id="gdpr-consent">
+<gdpr-banner-bottom :strings="{&quot;banner&quot;:{&quot;body&quot;:{&quot;firstHeading&quot;:&quot;We Care About Your Privacy&quot;,&quot;firstBody&quot;:&quot;We and our partners use cookies to store and access personal data such as browsing data for purposes such as serving and personalizing content and advertising and analyzing site traffic. You may find out more about the purposes for which we and our partners use cookies or exercise your preferences by clicking the \u2018Cookie Settings\u2019 button below. You can revisit your consent choices or withdraw consent at any time by clicking the link to your cookie settings in our Cookie Policy. We work in coordination with an industry framework, signaling your preferences globally for all participating websites. You can adjust cookie preferences in &lt;span id='hgr-cookie_consent-show_settings_btn' class='link fs-14 fs-15-sm cursor-pointer'&gt;Cookie Settings&lt;\/span&gt;.&quot;,&quot;secondHeading&quot;:&quot;We and our partners process data:&quot;,&quot;secondBody&quot;:&quot;Store and\/or access information on a device. Personalised ads. Personalised content. Ad and content measurement, audience insights, and product development. For more information, please read our &lt;a id='hgr-cookie_consent-cookie_policy_btn' class='link fs-14 fs-15-sm cursor-pointer' target='_blank' ref='someLink' rel='noopener noreferrer nofollow' href='\/cookie-policy'&gt;Cookie Policy&lt;\/a&gt;.&quot;},&quot;acceptBtn&quot;:&quot;Accept cookies&quot;,&quot;settingsBtn&quot;:&quot;Cookie settings&quot;},&quot;popup&quot;:{&quot;header&quot;:{&quot;title&quot;:&quot;Cookies settings&quot;,&quot;body&quot;:&quot;You may accept all cookies or choose specific categories, such as statistics or marketing. Mandatory cookies are always active since these cookies enable core functionality such as security, network management and provide you with access to features such as your profile and purchases, member-only resources, and other areas of the website. You may disable these by changing your browser settings, but this may affect how the website functions. For more information, please read our &lt;a id='hgr-cookie_consent-settings-cookie_policy_btn' class='link fs-14' target='_blank' rel='noopener noreferrer nofollow' href='\/cookie-policy'&gt;Cookie Policy&lt;\/a&gt;.&quot;,&quot;btn&quot;:&quot;Accept all&quot;},&quot;cookies&quot;:[{&quot;title&quot;:&quot;Mandatory cookies&quot;,&quot;body&quot;:&quot;They are necessary to ensure the proper functioning of the website.&quot;,&quot;btn&quot;:&quot;Always active&quot;},{&quot;title&quot;:&quot;Statistics cookies&quot;,&quot;body&quot;:&quot;They are important for us to improve the website's functionality and structure, based on how the website is using data.&quot;,&quot;cookieName&quot;:&quot;statistics&quot;},{&quot;title&quot;:&quot;Marketing cookies&quot;,&quot;body&quot;:&quot;They are used to collect information to provide advertising or content for a particular browser by creating different target groups.&quot;,&quot;cookieName&quot;:&quot;advertising&quot;}],&quot;buttonTxt&quot;:&quot;Accept Selected&quot;}}">
+</div><div class="h-pb-2 h-pt-2 primary l700 holder-shadow position-relative" id="submenu">
+<div class="container d-none d-xl-flex align-items-center height-16px">
+<ul class="label text-uppercase d-flex align-items-center text-white font-weight-bold">
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                              hover-opacity-6">
+<a href="news.html" data-wpel-link="internal" rel="follow">News</a>
+</li>
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                              hover-opacity-6">
+<a href="engineering.html" data-wpel-link="internal" rel="follow">Engineering</a>
+</li>
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                              hover-opacity-6">
+<a href="marketing.html" data-wpel-link="internal" rel="follow">Marketing</a>
+</li>
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                              hover-opacity-6">
+<a href="daily-life.html" data-wpel-link="internal" rel="follow">Daily Life</a>
+</li>
+</ul>
+<i onclick="toggleSearch()" class="material-icons ml-auto cursor-pointer">
+search
+</i>
+</div>
+<div class="container d-flex d-xl-none align-items-center height-16px label text-uppercase d-flex align-items-center text-white font-weight-bold">
+<ul id="submenu-m-list" class="navbar-collapse collapse mobile-m-holder h-pb-2 h-pt-2 primary l700 holder-shadow position-relative">
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                    hover-opacity-6">
+<a href="news.html" data-wpel-link="internal" rel="follow">News</a>
+</li>
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                    hover-opacity-6">
+<a href="engineering.html" data-wpel-link="internal" rel="follow">Engineering</a>
+</li>
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                    hover-opacity-6">
+<a href="marketing.html" data-wpel-link="internal" rel="follow">Marketing</a>
+</li>
+<li class="h-mr-3 transition-all-3 letter-spacing-1px
+                    hover-opacity-6">
+<a href="daily-life.html" data-wpel-link="internal" rel="follow">Daily Life</a>
+</li>
+</ul>
+<div class="mr-auto d-flex align-items-center">
+<p>Topics</p>
+<i id="submenu-m-trigger" class="material-icons mb-0 cursor-pointer hover-opacity-6 navbar-toggler" data-target="#submenu-m-list" data-toggle="collapse" onclick="changeSubMenuIcon()">menu</i>
+</div>
+<i onclick="toggleSearch()" class="material-icons ml-auto cursor-pointer">
+search
+</i>
+</div>
+</div>
+<div class="bg-white searchbox-holder holder-shadow" id="searchbox">
+<div class="container d-flex align-items-center">
+<form method="get" action="index.html" role="search" class="w-100">
+<input class="h-pl-1 label text-content-grey w-100 border-0" id="s" name="s" type="text" placeholder="Type your keyword (vps, wordpress hosting, domain)" value="" />
+</form>
+<i onclick="toggleSearch()" class="material-icons ml-auto cursor-pointer">
+close
+</i>
+</div>
+</div>
+<script>
+    var searchbox = document.getElementById("searchbox");
+    if (searchbox) {
+        searchbox.style.display = "none";
+    }
+    
+    function toggleSearch() {
+        var searchbox = document.getElementById("searchbox");
+
+        if (submenu.style.display === "none") {
+            submenu.classList.add("fade-in");
+            submenu.style.display = "block";
+            searchbox.style.display = "none";
+        } else {
+            submenu.style.display = "none";
+            searchbox.classList.add("fade-in");
+            searchbox.style.display = "block";
+        }
+    }
+
+    function changeSubMenuIcon(){
+        if(document.getElementById("submenu-m-trigger").innerText == "menu"){
+            document.getElementById("submenu-m-trigger").innerText = "close";
+        }
+        else{
+            document.getElementById("submenu-m-trigger").innerText = "menu";
+        }
+    }
+</script> <div class="dark h-pt-5 h-pt-lg-0 h-pb-4">
+<div id="blog-post-container" class="container">
+<div id="thumbnail-image" class="d-flex justify-content-center">
+<img width="1110" height="454" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201110%20454'%3E%3C/svg%3E" class="attachment-1110x454 size-1110x454 wp-post-image" alt="Improving Website Performance with LiteSpeed" data-lazy-srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed.png 1110w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed-300x123.png 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed-768x314.png 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed-1024x419.png 1024w" data-lazy-sizes="(max-width: 1110px) 100vw, 1110px" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/introducing-litespeed.png" /><noscript><img width="1110" height="454" src="wp-content/uploads/sites/4/2019/07/introducing-litespeed.png" class="attachment-1110x454 size-1110x454 wp-post-image" alt="Improving Website Performance with LiteSpeed" srcset="wp-content/uploads/sites/4/2019/07/introducing-litespeed.png 1110w, wp-content/uploads/sites/4/2019/07/introducing-litespeed-300x123.png 300w, wp-content/uploads/sites/4/2019/07/introducing-litespeed-768x314.png 768w, wp-content/uploads/sites/4/2019/07/introducing-litespeed-1024x419.png 1024w" sizes="(max-width: 1110px) 100vw, 1110px" /></noscript> </div>
+<div class="d-flex flex-column flex-lg-row">
+<div class="col-12 d-flex flex-row align-items-center justify-content-center flex-lg-column justify-content-lg-start
+            align-items-lg-start h-pt-4 h-pb-2 h-pt-4-lg h-pl-0-lg col-lg-1 order-1 order-lg-0 social-sticky">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.hostinger.com/blog/introducing-litespeed" class="text-light-black" target="_blank" rel="noopener noreferrer follow" data-wpel-link="internal">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg" alt="Facebook logo" onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/facebook-purple.svg';" onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/facebook.svg';" data-lazy-src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/facebook.svg" /><noscript><img src="wp-content/themes/blogtheme/public/images/facebook.svg" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg"
+             alt="Facebook logo"
+             onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/facebook-purple.svg';"
+             onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/facebook.svg';"/></noscript>
+</a>
+<a href="https://twitter.com/intent/tweet?text=Improving Website Performance with LiteSpeed&amp;url=https://www.hostinger.com/blog/introducing-litespeed" class="text-light-black" target="_blank" rel="noopener noreferrer follow" data-wpel-link="internal">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg" alt="Twitter logo" onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/twitter-purple.svg';" onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/twitter.svg';" data-lazy-src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/twitter.svg" /><noscript><img src="wp-content/themes/blogtheme/public/images/twitter.svg" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg"
+             alt="Twitter logo"
+             onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/twitter-purple.svg';"
+             onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/twitter.svg';"/></noscript>
+</a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.hostinger.com/blog/introducing-litespeed" class="text-light-black" target="_blank" rel="noopener noreferrer follow" data-wpel-link="internal">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg" alt="LinkedIn logo" onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/linkedin-purple.svg';" onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/linkedin.svg';" data-lazy-src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/linkedin.svg" /><noscript><img src="wp-content/themes/blogtheme/public/images/linkedin.svg" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg"
+             alt="LinkedIn logo"
+             onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/linkedin-purple.svg';"
+             onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/linkedin.svg';"/></noscript>
+</a>
+<a href="mailto:?subject=Improving Website Performance with LiteSpeed&amp;body=Article:%20https://www.hostinger.com/blog/introducing-litespeed" class="text-light-black" target="_blank" rel="nofollow noopener noreferrer">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg" alt="Email icon" onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/email-purple.svg';" onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/email.svg';" data-lazy-src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/email.svg" /><noscript><img src="wp-content/themes/blogtheme/public/images/email.svg" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg"
+             alt="Email icon"
+             onmouseover="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/email-purple.svg';"
+             onmouseout="this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/email.svg';"/></noscript>
+</a>
+<a class="text-light-black cursor-pointer d-flex align-items-center justify-content-center">
+<img onclick="copyToClipboard('https://www.hostinger.com/blog/introducing-litespeed');linkClick()" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg" alt="Link icon" onmouseover="linkHover(),this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/link-purple.svg';" onmouseout="linkHoverRemove();this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/link.svg';" data-lazy-src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/link.svg" /><noscript><img onclick="copyToClipboard('https://www.hostinger.com/blog/introducing-litespeed');linkClick()"
+             src="wp-content/themes/blogtheme/public/images/link.svg" class="h-pl-1 h-pr-1 h-p-0-lg h-mb-3-lg"
+             alt="Link icon"
+             onmouseover="linkHover(),this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/link-purple.svg';"
+             onmouseout="linkHoverRemove();this.src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/link.svg';"
+        /></noscript>
+<div id="copyLink" style="display: none;" class="copy-link">Copy link</div>
+<div id="copiedLink" style="display: none;" class="copied-link">Copied!</div>
+</a>
+</div>
+<script>
+    function linkHover() {
+        var socialLinkHover = document.getElementById("copyLink");
+        if (socialLinkHover.style.display === "none") {
+            socialLinkHover.style.display = "inline-block";
+        } else {
+            socialLinkHover.style.display = "none";
+        }
+    }
+
+    function linkHoverRemove() {
+        document.getElementById("copyLink").classList.add('copy-link');
+        document.getElementById("copyLink").classList.remove('copy-link-after');
+        document.getElementById("copiedLink").style.display = "none";
+    }
+
+    function linkClick() {
+        var socialLinkClick = document.getElementById("copiedLink");
+        if (socialLinkClick.style.display === "none") {
+            socialLinkClick.style.display = "inline-block";
+            document.getElementById("copyLink").style.display = "none";
+        } else {
+            socialLinkClick.style.display = "none";
+        }
+    }
+
+    function copyToClipboard(str) {
+        var el = document.createElement('textarea');
+        el.value = str;
+        el.setAttribute('readonly', '');
+        el.style = {
+            position: 'absolute',
+            left: '-9999px'
+        };
+
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    }
+</script> <div id="post" class="col-12 col-lg-8 shadow-box h-p-2 h-pb-4 h-p-5-lg h-pb-10-lg order-0 order-lg-1 bg-white height-100p translateY-m-8rem h-mt-2 h-mt-0-lg">
+<div class="d-flex label text-content-grey h-mb-3 flex-wrap">
+<p class="text-h-primary text-uppercase font-weight-bold h-mr-2 post-info">
+<a href="engineering.html" data-wpel-link="internal" rel="follow">
+Engineering </a>
+</p>
+<div class=" d-flex align-items-center h-mr-2">
+<i class="material-icons">
+access_time
+</i>
+<p class="ml-2 post-info">
+July 29, 2019 </p>
+</div>
+<div class="d-flex align-items-center h-mr-2">
+<i class="material-icons">
+hourglass_empty
+</i>
+<p class="ml-2 post-info">3 min Read</p>
+</div>
+<div class="d-flex align-items-center">
+<i class="material-icons">
+person_outline
+</i>
+<p class="ml-2 post-info">
+Aurimas L. </p>
+</div>
+</div>
+<h1>Improving Website Performance with LiteSpeed</h1>
+<p>At the beginning of 2019, <a href="../home.html" data-wpel-link="internal" rel="follow">Hostinger</a> decided to try <a href="https://www.litespeedtech.com/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">LiteSpeed</a> Web Servers (LSWS) as the main web server instead of Apache. <a href="https://www.litespeedtech.com/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">LiteSpeed</a> is a drop-in replacement for Apache with <strong>.htaccess</strong> file support.</p>
+<p>When compared to Apache, it has quite a few advantages:</p>
+<ul>
+<li><a href="https://www.litespeedtech.com/products/litespeed-web-server/features/event-driven-architecture" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">Event driven architecture</a></li>
+<li>Advanced cache engine</li>
+<li><a href="https://en.wikipedia.org/wiki/HTTP/2" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">HTTP/2</a>, <a href="https://en.wikipedia.org/wiki/QUIC" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">QUIC</a> support</li>
+<li>Built-in security features</li>
+</ul>
+<p>But that&#8217;s just the tip of the iceberg!</p>
+<h2>hPanel</h2>
+<p><a href="https://www.litespeedtech.com/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">LiteSpeed</a> supports popular hosting provider panels such as WHM/cPanel, DirectAdmin, Plesk and more.</p>
+<p>However, <a href="../home.html" data-wpel-link="internal" rel="follow">Hostinger</a> uses a custom hosting panel – <strong>hPanel</strong> – which has dynamic vhost management based on <a href="https://redis.io" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">Redis</a> and <a href="https://openresty.org/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">Openresty</a> + custom LUA scripts.  This is how it works: vhost data is saved in <a href="https://redis.io" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">Redis</a>. Openresty retrieves said data when a web request is received. Then it is passed on to the Apache web server.</p>
+<p>Originally, LiteSpeed is configured using <strong>config files.</strong> However, we wanted to implement fully dynamic management, which doesn&#8217;t need to reload services in order to update the configuration, as we did with the Openresty setup. We contacted LiteSpeed support, explained our current setup and the fact that we want to make it dynamically managed.</p>
+<p>Turns out, we were lucky as they were already developing LiteSpeed version <strong>5.4</strong>. They were happy to help and implement it in the development branch. That was great news to us since we didn’t have to reimplement our current <strong>vhost</strong> management process.</p>
+<p>So we didn’t just replace Apache, but we got rid of Openresty too, reducing the software stack used to process requests which also adds to the performance gain.</p>
+<h2>Pace of Development</h2>
+<p>When we initially planned to migrate to LiteSpeed we thought this should take about a month. After we discussed how it should be implemented, LiteSpeed engineers developed a working version with dynamic <strong>vhost</strong> management in about a week which is really fast for such software. We installed it in our development environment and prepared migration tools to replace Apache.</p>
+<p>Redis support was added to LSWS 5.4RC3. To our misfortune, we didn&#8217;t realize how many changes were planned and already done in LSWS 5.4RC3. The stable version release date was still unknown to us. RC4 was on the way too with additional changes that had to be tested. Here at Hostinger we often experience bad traffic coming to our clients` websites so it was a good environment to catch all unexpected errors. After the first deployment on our production server, we started receiving crash reports. At this point, bug hunting season started. For almost two months since the first deployment, we started reporting bugs to LiteSpeed engineers daily. Good thing is that when LSWS crashes for any reason, only a visitor that hit that bug is affected as LSWS generates a core file and gracefully restarts in almost no time. LiteSpeed engineers were focused on fixing those bugs and we got a new release in just a few hours after reporting them every day. When we stopped receiving crash reports from the first server we increased the server pool running with LiteSpeed, then new bugs started to appear. After about three months of such testing, verifying, reporting and fixing bugs a week came without any crash reports and we could tell that the stable version finally came.</p>
+<h2>The Result</h2>
+<p>After we deployed LiteSpeed, we saw a noticeable performance improvement compared to our old setup. Most of our clients use <a href="https://wordpress.org" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">WordPress</a> as their Content Management System so we tested it with LiteSpeed on our servers. We saw a great improvement on <a href="https://en.wikipedia.org/wiki/Time_to_first_byte" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">Time To First Byte</a> (TTFB) compared to Apache.</p>
+<p><img class="aligncenter wp-image-1231 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20241'%3E%3C/svg%3E" alt="openresty apache vs litespeed" width="390" height="241" data-lazy-srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/http-wp-no-cache-1-1.png 390w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/http-wp-no-cache-1-1-300x185.png 300w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/http-wp-no-cache-1-1.png" /><noscript><img class="aligncenter wp-image-1231 size-full" src="wp-content/uploads/sites/4/2019/07/http-wp-no-cache-1-1.png" alt="openresty apache vs litespeed" width="390" height="241" srcset="wp-content/uploads/sites/4/2019/07/http-wp-no-cache-1-1.png 390w, wp-content/uploads/sites/4/2019/07/http-wp-no-cache-1-1-300x185.png 300w" sizes="(max-width: 390px) 100vw, 390px" /></noscript></p>
+<h3>LiteSpeed Cache plugin</h3>
+<p>LiteSpeed engineers have developed their own <a href="https://wordpress.org/plugins/litespeed-cache/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">LiteSpeed Cache plugin</a> for WordPress. With this plugin installed TTFB improved even more by a great margin.<img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20241'%3E%3C/svg%3E" alt="wordpress with litespeed-cache plugin" width="390" height="241" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/http-wp-with-cache-1.png" /><noscript><img class="aligncenter" src="wp-content/uploads/sites/4/2019/07/http-wp-with-cache-1.png" alt="wordpress with litespeed-cache plugin" width="390" height="241" /></noscript></p>
+<p>To know more about how the LiteSpeed Cache plugin works, you can read this <a href="https://wordpress.org/plugins/litespeed-cache/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">article</a>.</p>
+<p>Furthermore, the latest LiteSpeed 5.4 release has huge improvements on SSL/TLS, QUIC and integrated security features which are enabled by default on all Hostinger servers.<img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20185'%3E%3C/svg%3E" alt="" width="300" height="185" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/ssl-wp-no-cache-1-300x185.png" /><noscript><img class="aligncenter" src="wp-content/uploads/sites/4/2019/07/ssl-wp-no-cache-1-300x185.png" alt="" width="300" height="185" /></noscript><img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20185'%3E%3C/svg%3E" alt="" width="300" height="185" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2019/07/ssl-wp-with-cache-1-300x185.png" /><noscript><img class="aligncenter" src="wp-content/uploads/sites/4/2019/07/ssl-wp-with-cache-1-300x185.png" alt="" width="300" height="185" /></noscript></p>
+<p>After seeing such a performance gain we decided to install the <a href="https://wordpress.org/plugins/litespeed-cache/" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">LiteSpeed Cache plugin</a> for all users who install <a href="https://wordpress.org" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">WordPress</a> via Hostinger&#8217;s <strong>Auto Installer</strong>. We also encourage all users using WordPress or other popular CMSs to install the LiteSpeed Cache plugin to benefit from its advantages.</p>
+<p>LiteSpeed has developed cache plugins for most popular CMS like WordPress, Magento, Joomla, PrestaShop, OpenCart, Drupal and more. Check the entire list <a href="https://www.litespeedtech.com/products/cache-plugins" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">here</a>.</p>
+<p>At Hostinger we always strive to provide the best experience for our users by allowing them to use the latest technology. We want to make it easy for customers to install, use and maintain their websites.</p>
+ </div>
+<div id="top-stories-sidebar" class="col-12 col-lg-3 h-pl-0 ml-lg-4 pr-lg-4 h-mt-3 d-flex flex-column order-2">
+
+<h4 class="font-weight-bold text-light-black h-mb-3 text-center text-lg-left">
+Top stories
+</h4>
+<div class="d-flex flex-column bg-white shadow-box h-mb-3">
+<div class="height-15rem">
+<a class="height-inherit" href="hostinger-the-best-web-hosting-provider-2021-neil-patel.html" data-wpel-link="internal" rel="follow">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-mb-3 h-p-0 min-width-100p object-fit-cover" alt="Hostinger is Recommended by Neil Patel as the Best Web Hosting Provider in 2021" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/08/Hostinger-no-1-by-Neil-Patel-1024x414.jpg" /><noscript><img
+                src="wp-content/uploads/sites/4/2021/08/Hostinger-no-1-by-Neil-Patel-1024x414.jpg"
+                class="h-mb-3 h-p-0 min-width-100p object-fit-cover"
+                alt="Hostinger is Recommended by Neil Patel as the Best Web Hosting Provider in 2021"
+            /></noscript>
+</a>
+</div>
+<div class="h-pr-3 h-pb-3 h-pl-3 d-flex flex-column h-mt-2">
+<p class="label text-content-grey h-mb-1">
+15 Aug •
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="marketing.html" data-wpel-link="internal" rel="follow">
+Marketing </a>
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="news.html" data-wpel-link="internal" rel="follow">
+News </a>
+</p>
+<h3 class="font-weight-bold text-light-black h-mb-3">
+<a href="hostinger-the-best-web-hosting-provider-2021-neil-patel.html" data-wpel-link="internal" rel="follow">
+Hostinger is Recommended by Neil Patel as the Best Web Hosting Provider in 2021 </a>
+</h3>
+<a class="subtitle text-h-primary font-weight-bold hover-text-primary-400 transition-all-3" href="hostinger-the-best-web-hosting-provider-2021-neil-patel.html" data-wpel-link="internal" rel="follow">Read more →</a>
+</div>
+</div>
+<div class="d-flex flex-column bg-white shadow-box h-mb-3">
+<div class="height-15rem">
+<a class="height-inherit" href="hostinger-dna-nourishing-multicultural-environment.html" data-wpel-link="internal" rel="follow">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-mb-3 h-p-0 min-width-100p object-fit-cover" alt="Hostinger’s DNA: How Are We Nourishing a Multicultural Environment?" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/JPG-DNR-01-1024x423.jpg" /><noscript><img
+                src="wp-content/uploads/sites/4/2021/07/JPG-DNR-01-1024x423.jpg"
+                class="h-mb-3 h-p-0 min-width-100p object-fit-cover"
+                alt="Hostinger’s DNA: How Are We Nourishing a Multicultural Environment?"
+            /></noscript>
+</a>
+</div>
+<div class="h-pr-3 h-pb-3 h-pl-3 d-flex flex-column h-mt-2">
+<p class="label text-content-grey h-mb-1">
+02 Aug •
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="daily-life.html" data-wpel-link="internal" rel="follow">
+Daily Life </a>
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="marketing.html" data-wpel-link="internal" rel="follow">
+Marketing </a>
+</p>
+<h3 class="font-weight-bold text-light-black h-mb-3">
+<a href="hostinger-dna-nourishing-multicultural-environment.html" data-wpel-link="internal" rel="follow">
+Hostinger’s DNA: How Are We Nourishing a Multicultural Environment? </a>
+</h3>
+<a class="subtitle text-h-primary font-weight-bold hover-text-primary-400 transition-all-3" href="hostinger-dna-nourishing-multicultural-environment.html" data-wpel-link="internal" rel="follow">Read more →</a>
+</div>
+</div>
+<div class="d-flex flex-column bg-white shadow-box h-mb-3">
+<div class="height-15rem">
+<a class="height-inherit" href="minecraft-from-hostinger-employees-point-of-view.html" data-wpel-link="internal" rel="follow">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="h-mb-3 h-p-0 min-width-100p object-fit-cover" alt="Minecraft From Hostinger Employees’ Point Of View: Imagination Is The Only Limit" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/large-minecraft-copy.jpeg" /><noscript><img
+                src="wp-content/uploads/sites/4/2021/07/large-minecraft-copy.jpeg"
+                class="h-mb-3 h-p-0 min-width-100p object-fit-cover"
+                alt="Minecraft From Hostinger Employees’ Point Of View: Imagination Is The Only Limit"
+            /></noscript>
+</a>
+</div>
+<div class="h-pr-3 h-pb-3 h-pl-3 d-flex flex-column h-mt-2">
+<p class="label text-content-grey h-mb-1">
+28 Jul •
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="daily-life.html" data-wpel-link="internal" rel="follow">
+Daily Life </a>
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="marketing.html" data-wpel-link="internal" rel="follow">
+Marketing </a>
+</p>
+<h3 class="font-weight-bold text-light-black h-mb-3">
+<a href="minecraft-from-hostinger-employees-point-of-view.html" data-wpel-link="internal" rel="follow">
+Minecraft From Hostinger Employees’ Point Of View: Imagination Is The Only Limit </a>
+</h3>
+<a class="subtitle text-h-primary font-weight-bold hover-text-primary-400 transition-all-3" href="minecraft-from-hostinger-employees-point-of-view.html" data-wpel-link="internal" rel="follow">Read more →</a>
+</div>
+</div>
+</div>
+</div>
+<div id="the-author-section" class="col-12 col-lg-8 offset-lg-1 shadow-box bg-white h-p-3 h-pb-4 h-pl-4 text-light-black d-flex flex-column translateY-m-5rem">
+<h3 class="font-weight-bold h-mb-1">The Author</h3>
+<div class="d-flex align-items-center">
+<div class="h-mr-2 height-65px width-65px">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p min-width-65px" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/42697c2de58aa17524470c5e524da5ae?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/42697c2de58aa17524470c5e524da5ae?s=96&d=mm&r=g"
+                                class="border-radius-50p min-width-65px"
+                                alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label">
+<p class="mb-1">Aurimas Lapienė /
+<span class="text-h-primary">
+<a class="links-hover" href="author/aurimaslapiene.html" data-wpel-link="internal" rel="follow">
+@aurimaslapiene </a>
+</span>
+</p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white h-pt-10 h-pb-10">
+<div class="container">
+<div class="d-flex flex-column flex-sm-row align-items-center justify-content-between h-mb-5">
+<h3 class="h2-style font-weight-bold">Related stories</h3>
+</div>
+<div class="row">
+<div class="d-flex flex-column col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-6 col-lg-4 h-mb-3" id="post-1860">
+<div class="bg-white shadow-box">
+<div class="col-12 h-p-0 height-20rem">
+<a class="height-inherit" href="graphql-rest-best-for-api-development.html" data-wpel-link="internal" rel="follow">
+<img width="640" height="261" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20261'%3E%3C/svg%3E" class="object-fit-cover wp-post-image" alt="GraphQL vs. REST: Which is the Best for API Development?" data-lazy-srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-1024x417.jpg 1024w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-300x122.jpg 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-768x313.jpg 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-1536x626.jpg 1536w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST.jpg 1982w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-1024x417.jpg" /><noscript><img width="640" height="261" src="wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-1024x417.jpg" class="object-fit-cover wp-post-image" alt="GraphQL vs. REST: Which is the Best for API Development?" srcset="wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-1024x417.jpg 1024w, wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-300x122.jpg 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-768x313.jpg 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST-1536x626.jpg 1536w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/07/GraphQL-vs-REST.jpg 1982w" sizes="(max-width: 640px) 100vw, 640px" /></noscript> </a>
+</div>
+<div class="d-flex flex-column h-pt-2 h-pl-3 h-pb-3 h-pr-3">
+<div class="d-flex justify-content-between h-mb-1">
+<p class="label text-content-grey">
+02 Jul •
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="engineering.html" data-wpel-link="internal" rel="follow">
+Engineering </a>
+</p>
+
+</div>
+<h3 class="h-mb-3 font-weight-bold height-8rem">
+<a href="graphql-rest-best-for-api-development.html" data-wpel-link="internal" rel="follow">
+GraphQL vs. REST: Which is the Best for API Development? </a>
+</h3>
+<a class="subtitle text-h-primary font-weight-bold hover-text-primary-400 transition-all-3" href="graphql-rest-best-for-api-development.html" data-wpel-link="internal" rel="follow">
+Read more →
+</a>
+</div>
+</div>
+</div>
+<div class="d-flex flex-column col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-6 col-lg-4 h-mb-3" id="post-1827">
+<div class="bg-white shadow-box">
+<div class="col-12 h-p-0 height-20rem">
+<a class="height-inherit" href="https://www.hostinger.com/blog/reducing-energy-usage-of-website" data-wpel-link="internal" rel="follow">
+<img width="640" height="261" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20261'%3E%3C/svg%3E" class="object-fit-cover wp-post-image" alt="Reducing Energy Usage of the Website" data-lazy-srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-1024x417.png 1024w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-300x122.png 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-768x313.png 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-1536x626.png 1536w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website.png 1988w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-1024x417.png" /><noscript><img width="640" height="261" src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-1024x417.png" class="object-fit-cover wp-post-image" alt="Reducing Energy Usage of the Website" srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-1024x417.png 1024w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-300x122.png 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-768x313.png 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website-1536x626.png 1536w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/06/Reducing-energy-of-website.png 1988w" sizes="(max-width: 640px) 100vw, 640px" /></noscript> </a>
+</div>
+<div class="d-flex flex-column h-pt-2 h-pl-3 h-pb-3 h-pr-3">
+<div class="d-flex justify-content-between h-mb-1">
+<p class="label text-content-grey">
+25 Jun •
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="engineering.html" data-wpel-link="internal" rel="follow">
+Engineering </a>
+</p>
+
+</div>
+<h3 class="h-mb-3 font-weight-bold height-8rem">
+<a href="https://www.hostinger.com/blog/reducing-energy-usage-of-website" data-wpel-link="internal" rel="follow">
+Reducing Energy Usage of the Website </a>
+</h3>
+<a class="subtitle text-h-primary font-weight-bold hover-text-primary-400 transition-all-3" href="https://www.hostinger.com/blog/reducing-energy-usage-of-website" data-wpel-link="internal" rel="follow">
+Read more →
+</a>
+</div>
+</div>
+</div>
+<div class="d-flex flex-column col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-6 col-lg-4 h-mb-3" id="post-1638">
+<div class="bg-white shadow-box">
+<div class="col-12 h-p-0 height-20rem">
+<a class="height-inherit" href="https://www.hostinger.com/blog/introducing-php-8-0" data-wpel-link="internal" rel="follow">
+<img width="640" height="264" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20264'%3E%3C/svg%3E" class="object-fit-cover wp-post-image" alt="PHP 8.0: Introducing the New PHP Version" data-lazy-srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-1024x423.png 1024w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-300x124.png 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-768x317.png 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-1536x634.png 1536w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8.png 2048w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-1024x423.png" /><noscript><img width="640" height="264" src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-1024x423.png" class="object-fit-cover wp-post-image" alt="PHP 8.0: Introducing the New PHP Version" srcset="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-1024x423.png 1024w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-300x124.png 300w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-768x317.png 768w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8-1536x634.png 1536w, https://www.hostinger.com/blog/wp-content/uploads/sites/4/2021/03/introducing-php-8.png 2048w" sizes="(max-width: 640px) 100vw, 640px" /></noscript> </a>
+</div>
+<div class="d-flex flex-column h-pt-2 h-pl-3 h-pb-3 h-pr-3">
+<div class="d-flex justify-content-between h-mb-1">
+<p class="label text-content-grey">
+18 Mar •
+<a class="text-h-primary text-uppercase font-weight-bold links-hover" href="engineering.html" data-wpel-link="internal" rel="follow">
+Engineering </a>
+</p>
+
+</div>
+<h3 class="h-mb-3 font-weight-bold height-8rem">
+<a href="https://www.hostinger.com/blog/introducing-php-8-0" data-wpel-link="internal" rel="follow">
+PHP 8.0: Introducing the New PHP Version </a>
+</h3>
+<a class="subtitle text-h-primary font-weight-bold hover-text-primary-400 transition-all-3" href="https://www.hostinger.com/blog/introducing-php-8-0" data-wpel-link="internal" rel="follow">
+Read more →
+</a>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="dark">
+<div class="container">
+<div class="dark h-pb-10 h-pt-10">
+<div class="container">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/ae99e84b83d884c6dea2234740aecf86?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/ae99e84b83d884c6dea2234740aecf86?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Karim gul <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-4171" data-commentid="4171" data-postid="1201" data-belowelement="comment-4171" data-respondelement="respond" data-replyto="Reply to Karim gul" aria-label="Reply to Karim gul">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+April 18, 2021 </p>
+<p class="text-light-black comments-text">Hii friends i like to buy this cloud service start plan, how it's work? any one can give our experience about this hosting company how it's work performance and speed and customer support or replying time</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on April 21, 2021 </p>
+<p class="text-light-black comments-text">Hey there! If you are looking for some stories and advice from our customers, I would recommend you to check out the reviews on <a href="https://www.trustpilot.com/review/hostinger.com" rel="ugc follow" data-wpel-link="internal">Trustpilot</a>. We encourage our customers to share their honest feedback. Other than that, our team is here to help you out selecting a plan; drop us an email at support@hostinger.com; we are here for you 😊</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/1b83dc862b98a2701b19dbfa3db5bbc0?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/1b83dc862b98a2701b19dbfa3db5bbc0?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Urmila Enterprises <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3780" data-commentid="3780" data-postid="1201" data-belowelement="comment-3780" data-respondelement="respond" data-replyto="Reply to Urmila Enterprises" aria-label="Reply to Urmila Enterprises">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+October 26, 2020 </p>
+<p class="text-light-black comments-text">My website not working properly urmila*****.in
+</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on October 27, 2020 </p>
+<p class="text-light-black comments-text">Hey there. I can see that your domain is not pointing to any hosting plan. Could you drop us a message from your dashboard Help section -&gt; Contact us? Our agent will take a look at it!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/0f9cb9cfa62772d74541545af7c6a138?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/0f9cb9cfa62772d74541545af7c6a138?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+bineet <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3732" data-commentid="3732" data-postid="1201" data-belowelement="comment-3732" data-respondelement="respond" data-replyto="Reply to bineet" aria-label="Reply to bineet">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+October 12, 2020 </p>
+<p class="text-light-black comments-text">I am facing issue using litespeed on hostinger, when ever I try to flush cache from hpanel of hostinger. Each time it shows me error that, cannot flush cache. Please help me</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on October 13, 2020 </p>
+<p class="text-light-black comments-text">Hey there! I am sorry to hear about this issue, it seems unusual and our CS team would be glad to check the error out. Could you drop us a message with more details at support@hostinger.com or via Live Chat from your dashboard?</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/036fea9ea87535f7598fe347b4b178e7?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/036fea9ea87535f7598fe347b4b178e7?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Shafiqul Mridha <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3727" data-commentid="3727" data-postid="1201" data-belowelement="comment-3727" data-respondelement="respond" data-replyto="Reply to Shafiqul Mridha" aria-label="Reply to Shafiqul Mridha">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+October 10, 2020 </p>
+<p class="text-light-black comments-text">Hey Aurimas,
+After reading this article I've decided to migrate my hosting plan to the LiteSpeed server and wanted to thank you. Great job.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on October 11, 2020 </p>
+<p class="text-light-black comments-text">Hey, Shafiqul! I and Aurimas are both happy you liked the article. How is the server? :)</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/f93a9a9a437cba195d541f18d5add43a?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/f93a9a9a437cba195d541f18d5add43a?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+siescribe.me <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3632" data-commentid="3632" data-postid="1201" data-belowelement="comment-3632" data-respondelement="respond" data-replyto="Reply to siescribe.me" aria-label="Reply to siescribe.me">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+September 11, 2020 </p>
+<p class="text-light-black comments-text">Interesting, but since you were talking about improvements to the site, I would have seen the impact of this on an ecommerce with woocommerce.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on September 12, 2020 </p>
+<p class="text-light-black comments-text">Hey there! The performance of your website depends on many variables and it can be always improved. If you feel like you are not getting the most of it - our team would gladly take a look into your website and help you out! Please drop us an email at support@hostinger.com - our agents are always here to assist you.</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/e086bedda520624e4ba5d9306d18a7f4?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/e086bedda520624e4ba5d9306d18a7f4?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Chandra minj <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3631" data-commentid="3631" data-postid="1201" data-belowelement="comment-3631" data-respondelement="respond" data-replyto="Reply to Chandra minj" aria-label="Reply to Chandra minj">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+September 11, 2020 </p>
+<p class="text-light-black comments-text">Where is my domin</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on September 12, 2020 </p>
+<p class="text-light-black comments-text">Hello, Chandra! I am happy to see that you have even two domains with us. You can access them anytime on your dashboard at <a href="https://hostinger.in" rel="ugc nofollow noopener noreferrer" data-wpel-link="external" target="_blank">hostinger.in</a>. If you need any help - write us a message at support@hostinger.com, our team is here for you.</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/5e4879f5f62f868d07dc35af8a6b1688?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/5e4879f5f62f868d07dc35af8a6b1688?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+VazGaming <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3630" data-commentid="3630" data-postid="1201" data-belowelement="comment-3630" data-respondelement="respond" data-replyto="Reply to VazGaming" aria-label="Reply to VazGaming">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+September 11, 2020 </p>
+<p class="text-light-black comments-text">Amazing, with litespeed makes my website load much faster</p>
+</div>
+</div>
+</div>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/8876975cfdc12c4e4e6487231443f8df?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/8876975cfdc12c4e4e6487231443f8df?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Prabhat Pushp <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-3629" data-commentid="3629" data-postid="1201" data-belowelement="comment-3629" data-respondelement="respond" data-replyto="Reply to Prabhat Pushp" aria-label="Reply to Prabhat Pushp">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+September 11, 2020 </p>
+<p class="text-light-black comments-text">I was using Litespeed, and I found out about object caching. So I installed Memcached and Redis extension. But in Litespeed connection failed. Can someone tell me how to fix that?</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on September 12, 2020 </p>
+<p class="text-light-black comments-text">Hey, Prabhat. Our team would like to check your case, could you contact us at support@hostinger.com or alternatively - open a ticket on your dashboard -&gt; Help section? We are here to solve this!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/f25314ce6e1cdbd70605f3a467c0f496?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/f25314ce6e1cdbd70605f3a467c0f496?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Sahil <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-2949" data-commentid="2949" data-postid="1201" data-belowelement="comment-2949" data-respondelement="respond" data-replyto="Reply to Sahil" aria-label="Reply to Sahil">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+May 19, 2020 </p>
+<p class="text-light-black comments-text">Do we have to install litespeed after everything installed. I saw it in my worddpress tab that litespeed is showing inactive. do i have to activate it manually? or is it for the litespeed cache plugin?</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"><noscript><img src="https://www.hostinger.com/blog/wp-content/uploads/sites/4/2020/04/Screenshot-2020-04-09-at-13.25.58-150x150.png"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on May 20, 2020 </p>
+<p class="text-light-black comments-text">LiteSpeed Cache comes pre-installed for all Hostinger accounts!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/190053b9c01ccea38c79e5cfb01ae6f7?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/190053b9c01ccea38c79e5cfb01ae6f7?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Alan <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-2841" data-commentid="2841" data-postid="1201" data-belowelement="comment-2841" data-respondelement="respond" data-replyto="Reply to Alan" aria-label="Reply to Alan">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+April 05, 2020 </p>
+<p class="text-light-black comments-text">Can somebody tell me:-
+What the amount of storage on the Premium plan?
+Can you buy extra?</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               reply-comment flex-column flex-md-row align-items-center">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-29px width-29px min-width-29px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/c778f1324ff5ad6edaf71cecbe698c94?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/c778f1324ff5ad6edaf71cecbe698c94?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Andrius S. </h3>
+<p class="h-mb-2 text-content-grey">
+Replied on April 06, 2020 </p>
+<p class="text-light-black comments-text">Hey Alan, it's 20GB but you can upgrade your plan anytime if you need more!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<div class="shadow-box bg-white h-pt-3 h-pr-5 h-pb-3 h-pl-5 h-mb-1
+               ">
+<div class="d-flex flex-sm-row flex-column align-items-center">
+<div class="h-mr-2 height-58px width-58px min-width-58px align-self-start">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="border-radius-50p" alt="Author" data-lazy-src="https://secure.gravatar.com/avatar/e7fd16b0820531f0eb016d8ecd3abde4?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/e7fd16b0820531f0eb016d8ecd3abde4?s=96&d=mm&r=g"
+                    class="border-radius-50p"
+                    alt="Author"></noscript>
+</div>
+<div class="d-flex flex-column label w-100 h-ml-3-sm mt-20">
+<h3 class="font-weight-bold text-h-primary h-mb-1 d-flex justify-content-between">
+Ritesh Sharma <a rel="nofollow" class="comment-reply-link hover-text-primary-400 text-uppercase label" href="index.html%3Fp=1201.html#comment-1828" data-commentid="1828" data-postid="1201" data-belowelement="comment-1828" data-respondelement="respond" data-replyto="Reply to Ritesh Sharma" aria-label="Reply to Ritesh Sharma">Reply</a> </h3>
+<p class="h-mb-2 text-content-grey">
+October 09, 2019 </p>
+<p class="text-light-black comments-text">Recently i developed a site and i found great result with Hostinger hosting and the litespeed.
+Any small business website can run easily with cheapest hosting plan from Hostinger and it can give high performance with lightspeed.
+Ritesh
+</p>
+</div>
+</div>
+</div>
+</li>
+<div class="shadow-box bg-white h-p-3 h-pt-7-lg h-pr-13-lg h-pb-7-lg h-pl-13-lg h-mt-2">
+<div class="d-flex flex-column">
+<div id="respond" class="comment-respond">
+<h3 class="text-light-black font-is font-weight-bold mb-40" style="font-size: 24px;">Leave a Reply <small><a rel="follow" id="cancel-comment-reply-link" href="index.html%3Fp=1201.html#respond" style="display:none;" data-wpel-link="internal">Cancel reply</a></small></h3><form action="https://www.hostinger.com/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="mb-10 font-weight-bold" style="color: #595959; font-size:14px; height: 24px">Comment</p><div id="comment-texarea-input-border" class="new-input-border position-relative"><textarea id="comment" name="comment" placeholder="Enter your comment" style="outline: 0; height: 200px !important;" class="w-100 dark border-0 noresize bg-transparent h-pl-2 h-pt-2 label text-content-grey"></textarea></div><p class="mb-10 mt-40 font-weight-bold" style="color: #595959; font-size:14px; height: 24px">Name*</p><div id="comment-name-input-border" class="new-input-border position-relative"><input id="comment-name-input" style="outline: 0;" class="dark height-46px bg-transparent border-0 w-100 h-pl-2 label text-content-grey" id="author" name="author" type="text" placeholder="Enter your name" value="" aria-required='true'></div>
+<p class="mb-10 mt-40 font-weight-bold" style="color: #595959; font-size:14px; height: 24px">Email* <img style="display: none;" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/tip-tool.svg" /><noscript><img  style="display: none;" src="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/tip-tool.svg"/></noscript></p><div id="comment-email-input-border" class="new-input-border position-relative"><input id="comment-email-input" style="outline: 0;" class="dark height-46px border-0 bg-transparent w-100 h-pl-2 label text-content-grey" id="email" name="email" placeholder="Enter your email" type="email" value="" aria-required='true'></div>
+<p class="wpgdprc-checkbox"><input type="checkbox" name="wpgdprc" id="wpgdprc" value="1" /><label for="wpgdprc">By using this form you agree with the storage and handling of your data by this website. <abbr class="wpgdprc-required" title="You need to accept this checkbox.">*</abbr></label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="new-h-button-primary button text-white mt-40" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1201' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1922db4d22" /></p><input type="hidden" id="ak_js" name="ak_js" value="31" /><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea></form> </div>
+<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="noopener nofollow noreferrer" data-wpel-link="external">Learn how your comment data is processed</a>.</p> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-pt-7 h-pb-7 h-pt-9-lg h-pb-9-lg part-of-hostinger-bg">
+<div class="container d-flex justify-content-center align-items-center flex-column">
+<h2 class="h-mb-3 text-white text-center">
+<b>Become a part of Hostinger now!</b>
+</h2>
+<div class="h-button-wrapper w-60">
+<a class="h-button-red" href="../career.html" data-wpel-link="internal" rel="follow">Get Started NOW</a>
+</div>
+</div>
+</div><footer id="footer">
+<div id="footer-new" class="footer-new">
+<Footer-new :menu-items="[{&quot;title&quot;:&quot;HOSTING&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Web Hosting&quot;,&quot;url&quot;:&quot;\/web-hosting&quot;},{&quot;title&quot;:&quot;VPS Hosting&quot;,&quot;url&quot;:&quot;\/vps-hosting&quot;},{&quot;title&quot;:&quot;Minecraft Server Hosting&quot;,&quot;url&quot;:&quot;\/minecraft-server-hosting&quot;},{&quot;title&quot;:&quot;Cloud Hosting&quot;,&quot;url&quot;:&quot;\/cloud-hosting&quot;},{&quot;title&quot;:&quot;WordPress Hosting&quot;,&quot;url&quot;:&quot;\/wordpress-hosting&quot;},{&quot;title&quot;:&quot;Email Hosting&quot;,&quot;url&quot;:&quot;\/email-hosting&quot;},{&quot;title&quot;:&quot;CMS Hosting&quot;,&quot;url&quot;:&quot;\/cms-hosting&quot;},{&quot;title&quot;:&quot;Ecommerce Hosting&quot;,&quot;url&quot;:&quot;\/ecommerce-hosting&quot;},{&quot;title&quot;:&quot;Free Website Hosting&quot;,&quot;url&quot;:&quot;\/free-hosting&quot;},{&quot;title&quot;:&quot;Website Builder&quot;,&quot;url&quot;:&quot;\/website-builder&quot;},{&quot;title&quot;:&quot;Cheap Web Hosting&quot;,&quot;url&quot;:&quot;\/cheap-web-hosting&quot;},{&quot;title&quot;:&quot;Buy Hosting&quot;,&quot;url&quot;:&quot;\/buy-hosting&quot;},{&quot;title&quot;:&quot;Windows VPS&quot;,&quot;url&quot;:&quot;\/windows-vps&quot;},{&quot;title&quot;:&quot;Web Design Services&quot;,&quot;url&quot;:&quot;\/web-design-services&quot;}]},{&quot;title&quot;:&quot;DOMAINS&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Domain Checker&quot;,&quot;url&quot;:&quot;\/domain-checker&quot;},{&quot;title&quot;:&quot;Domain Transfer&quot;,&quot;url&quot;:&quot;\/transfer-domain&quot;},{&quot;title&quot;:&quot;Free Domain&quot;,&quot;url&quot;:&quot;\/free-domain&quot;},{&quot;title&quot;:&quot;XYZ Domain&quot;,&quot;url&quot;:&quot;\/free-xyz-domain&quot;},{&quot;title&quot;:&quot;Cheap SSL Certificate&quot;,&quot;url&quot;:&quot;\/buy-cheap-ssl-certificate&quot;},{&quot;title&quot;:&quot;Buy Domain Name&quot;,&quot;url&quot;:&quot;\/domain-pricing&quot;},{&quot;title&quot;:&quot;Whois Checker&quot;,&quot;url&quot;:&quot;\/whois&quot;},{&quot;title&quot;:&quot;Domain Name Search&quot;,&quot;url&quot;:&quot;\/domain-name-search&quot;},{&quot;title&quot;:&quot;99 Cent Domains&quot;,&quot;url&quot;:&quot;\/99-cent-domain&quot;},{&quot;title&quot;:&quot;Free SSL Certificate&quot;,&quot;url&quot;:&quot;\/free-ssl-certificate&quot;}]},[{&quot;title&quot;:&quot;INFORMATION&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Server Status&quot;,&quot;url&quot;:&quot;https:\/\/stats.hostinger.com\/&quot;,&quot;targetBlank&quot;:true,&quot;relNofollow&quot;:true},{&quot;title&quot;:&quot;Affiliate Program&quot;,&quot;url&quot;:&quot;\/make-money-online&quot;},{&quot;title&quot;:&quot;Payment Methods&quot;,&quot;url&quot;:&quot;\/payments&quot;},{&quot;title&quot;:&quot;Wall of Fame&quot;,&quot;url&quot;:&quot;\/wall-of-fame&quot;},{&quot;title&quot;:&quot;Compare&quot;,&quot;url&quot;:&quot;\/compare&quot;},{&quot;title&quot;:&quot;Reviews&quot;,&quot;url&quot;:&quot;\/reviews&quot;},{&quot;title&quot;:&quot;Student Discount&quot;,&quot;url&quot;:&quot;\/student-discount&quot;},{&quot;title&quot;:&quot;Pricing&quot;,&quot;url&quot;:&quot;\/pricing&quot;}]},{&quot;title&quot;:&quot;LEGAL&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Privacy Policy&quot;,&quot;url&quot;:&quot;\/privacy&quot;},{&quot;title&quot;:&quot;Terms of Service&quot;,&quot;url&quot;:&quot;\/terms-of-use&quot;}]}],[{&quot;title&quot;:&quot;COMPANY&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;About Hostinger&quot;,&quot;url&quot;:&quot;\/about&quot;},{&quot;title&quot;:&quot;Contact Us&quot;,&quot;url&quot;:&quot;\/contacts&quot;},{&quot;title&quot;:&quot;Our Technology&quot;,&quot;url&quot;:&quot;\/technology&quot;},{&quot;title&quot;:&quot;Career&quot;,&quot;url&quot;:&quot;https:\/\/www.hostinger.com\/career&quot;,&quot;targetBlank&quot;:true}]},{&quot;title&quot;:&quot;HELP&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Report Abuse&quot;,&quot;url&quot;:&quot;\/report-abuse&quot;},{&quot;title&quot;:&quot;Knowledge Base&quot;,&quot;url&quot;:&quot;\/knowledge-base&quot;},{&quot;title&quot;:&quot;Tutorials&quot;,&quot;url&quot;:&quot;\/tutorials&quot;},{&quot;title&quot;:&quot;Blog&quot;,&quot;url&quot;:&quot;https:\/\/www.hostinger.com\/blog&quot;,&quot;targetBlank&quot;:true}]}]]" :payment-methods="[&quot;visa&quot;,&quot;mastercard&quot;,&quot;amex&quot;,&quot;discover&quot;,&quot;jcb&quot;,&quot;maestro&quot;,&quot;dinersclub&quot;]" payment-url="https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/images/payments/2020/" payment-path="/payments" payment-btn="And More" about="Our mission is to make life easier for website developers and their customers. We do it by offering easy to use, fast and reliable web hosting services." :social-links="[{&quot;id&quot;:&quot;social_linkedin&quot;,&quot;url&quot;:&quot;https:\/\/www.linkedin.com\/company\/hostinger-international&quot;,&quot;img&quot;:&quot;https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/socials\/2020\/linked-in.svg&quot;,&quot;alt&quot;:&quot;Linked-in logo&quot;},{&quot;id&quot;:&quot;social_instagram&quot;,&quot;url&quot;:&quot;https:\/\/www.instagram.com\/hostinger_global\/&quot;,&quot;img&quot;:&quot;https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/socials\/2020\/instagram.svg&quot;,&quot;alt&quot;:&quot;Instagram logo&quot;},{&quot;id&quot;:&quot;social_facebook&quot;,&quot;url&quot;:&quot;https:\/\/www.facebook.com\/Hostinger&quot;,&quot;img&quot;:&quot;https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/socials\/2020\/facebook.svg&quot;,&quot;alt&quot;:&quot;Facebook logo&quot;},{&quot;id&quot;:&quot;social_twitter&quot;,&quot;url&quot;:&quot;https:\/\/twitter.com\/hostinger&quot;,&quot;img&quot;:&quot;https:\/\/www.hostinger.com\/blog\/wp-content\/themes\/blogtheme\/public\/images\/socials\/2020\/twitter.svg&quot;,&quot;alt&quot;:&quot;Twitter logo&quot;}]" copyright="© 2004-2021 hostinger.com - Premium Web Hosting, Cloud, VPS & Domain Registration Services." no-vat-txt="Prices are listed without VAT">
+</Footer-new>
+</div>
+</footer>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL4FQVG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/www.hostinger.com\/blog\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"47dc6a7ddf","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hostinger.com/blog/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.1.16' id='ppress-frontend-script-js' defer></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-delay-js-js-after'>
+(function() {
+"use strict";var e=function(){function n(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(e,t,r){return t&&n(e.prototype,t),r&&n(e,r),e}}();function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function r(e,t){n(this,r),this.attrName="data-rocketlazyloadscript",this.browser=t,this.options=this.browser.options,this.triggerEvents=e,this.userEventListener=this.triggerListener.bind(this)}return e(r,[{key:"init",value:function(){this._addEventListener(this)}},{key:"reset",value:function(){this._removeEventListener(this)}},{key:"_addEventListener",value:function(t){this.triggerEvents.forEach(function(e){return window.addEventListener(e,t.userEventListener,t.options)})}},{key:"_removeEventListener",value:function(t){this.triggerEvents.forEach(function(e){return window.removeEventListener(e,t.userEventListener,t.options)})}},{key:"_loadScriptSrc",value:function(){var r=this,e=document.querySelectorAll("script["+this.attrName+"]");0!==e.length&&Array.prototype.slice.call(e).forEach(function(e){var t=e.getAttribute(r.attrName);e.setAttribute("src",t),e.removeAttribute(r.attrName)}),this.reset()}},{key:"triggerListener",value:function(){this._loadScriptSrc(),this._removeEventListener(this)}}],[{key:"run",value:function(){RocketBrowserCompatibilityChecker&&new r(["keydown","mouseover","touchmove","touchstart","wheel"],new RocketBrowserCompatibilityChecker({passive:!0})).init()}}]),r}();t.run();
+}());
+</script>
+<script type='text/javascript' src='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/js/theme.min.js?ver=1.0.0.1628758917' id='understrap-scripts-js' defer></script>
+<script type='text/javascript' src='https://www.hostinger.com/blog/wp-includes/js/comment-reply.min.js?ver=5.8' id='comment-reply-js' defer></script>
+<script type='text/javascript' src='https://www.hostinger.com/blog/wp-content/plugins/enlighter/cache/X4_enlighterjs.min.js?ver=WS7smgxFdjTI98C' id='enlighterjs-js' defer></script>
+<script type='text/javascript' id='wpgdprc.js-js-extra'>
+/* <![CDATA[ */
+var wpgdprcData = {"ajaxURL":"https:\/\/www.hostinger.com\/blog\/wp-admin\/admin-ajax.php","ajaxSecurity":"19ed16211f","isMultisite":"1","path":"\/blog\/","blogId":"4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hostinger.com/blog/wp-content/plugins/wp-gdpr-compliance/assets/js/front.min.js?ver=1613720712' id='wpgdprc.js-js' defer></script>
+<script type='text/javascript' src='https://www.hostinger.com/blog/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js' defer></script>
+<script data-minify="1" defer type='text/javascript' src='https://www.hostinger.com/blog/wp-content/cache/min/4/blog/wp-content/plugins/akismet/_inc/form.js?ver=1628249671' id='akismet-form-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.hostinger.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+<script data-rocketlazyloadscript='https://www.hostinger.com/blog/wp-content/themes/blogtheme/public/js/vueapp.js'></script>
+<script>"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900&#038;display=swap" rel="stylesheet"><link rel='stylesheet' id='wp-block-library-css'  href='wp-includes/css/dist/block-library/style.min.css%3Fver=5.8.css' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='ppress-frontend-css'  href='wp-content/cache/min/4/blog/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css%3Fver=1628249671.css' type='text/css' media='all' /><link rel='stylesheet' id='ppress-flatpickr-css'  href='wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css%3Fver=3.1.16.css' type='text/css' media='all' /><link rel='stylesheet' id='ppress-select2-css'  href='wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css%3Fver=5.8.css' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='understrap-styles-css'  href='wp-content/cache/min/4/blog/wp-content/themes/blogtheme/public/css/theme.min.css%3Fver=1628249671.css' type='text/css' media='all' /><link rel='stylesheet' id='enlighterjs-css'  href='wp-content/plugins/enlighter/cache/X4_enlighterjs.min.css%3Fver=WS7smgxFdjTI98C.css' type='text/css' media='all' /><link rel='stylesheet' id='wpgdprc.css-css'  href='wp-content/plugins/wp-gdpr-compliance/assets/css/front.min.css%3Fver=1613720712.css' type='text/css' media='all' /></noscript><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6801d1b9da4460df","token":"16b338187db945179976004384e89bdf","version":"2021.8.0","si":10}'></script>
+</body>
+</html>
+<script>
+    if (screen.width > 1024) {
+        setTimeout(function() {
+            let blogPostContentHeight = document.getElementById("post").offsetHeight;
+            let topStoriesSideBarHeight = document.getElementById("top-stories-sidebar").offsetHeight;
+            if (topStoriesSideBarHeight > blogPostContentHeight) {
+                let difference = (topStoriesSideBarHeight - blogPostContentHeight);
+                let theAuthorSection = document.getElementById("the-author-section");
+                let blogPostContainer = document.getElementById("blog-post-container");
+                let thumbnailImage = document.getElementById("thumbnail-image");
+                if (thumbnailImage) {
+                    theAuthorSection.style.marginTop = '-' + (difference + 20) + 'px';
+                    blogPostContainer.style.marginBottom = difference + 'px';
+                }
+                else {
+                    theAuthorSection.style.marginTop = '-' + (difference - difference / 100 * 10) + 'px';
+                    blogPostContainer.style.marginBottom = (difference - difference / 100 * 10) + 'px';
+                }
+            }
+        }, 200);
+    }
+</script>
