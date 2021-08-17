@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Play online with your friends and millions of users from all over the world. One of the best free online casual multiplayer game of 2018. Fight with opponents and eat them to become the biggest cell. Also you can play Floppy Bird, 2048 and Tap Tap from your smartphone, tablet or PC.">
+    <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>IO online multiplayer action game. Survive and grow eating other players cells.</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico%3F4" type="image/x-icon">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://eatcells.com/"/>
+    <meta property="og:title" content="Eat Cells"/>
+    <meta property="og:image" content="https://eatcells.com/assets/img/share@2x.png"/>
+    <meta property="og:description" content="Eat cells smaller than you and don't be eaten! MMO RPG!"/>
+    <meta property="og:site_name" content="Eat Cells"/>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/new_index.css" rel="stylesheet">
+    <link href="assets/css/new_gallery.css" rel="stylesheet">
+
+    <script src="assets/js/new_quadtree.js"></script>
+    <script src="assets/js/new_main_out4.js%3F3512341123"></script>
+    <script src="assets/js/videoad2.js%3F5555555"></script>
+</head>
+
+<body>
+    <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none;">
+        <div id="gallery-content">
+            <div id="gallery-header">Skins</div>
+            <div id="gallery-body"></div>
+        </div>
+    </div>
+    <div id="overlays" style="display: none;">
+        <div id="helloDialog">
+            <div class="games" id="games">
+              <div id="games-close">&#10006;</div>
+              <div class="games-row">
+                <a href="games/2048.html"><img src="assets/img/game-2048.jpg" width="150" /></a>
+              </div>
+              <div class="games-row">
+                <a href="games/floppy.html"><img src="assets/img/game-floppy.jpg" width="150" /></a>
+              </div>
+              <div class="games-row">
+                <a href="games/taptap.html"><img src="assets/img/game-tap.jpg" width="150" /></a>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <h2 id="title">EatCells.com</h2>
+            </div>
+
+            <div class="form-group">
+                <input id="nick" class="form-control" placeholder="Nickname" maxlength="15">
+                <input id="skin" class="form-control"  placeholder="Skin Name">
+                <select id="gamemode" class="form-control" onchange="setserver(this.value)" required style="display: none;">
+                    <option value="eatcells.com/api/" selected>Local</option>
+                </select>
+            </div>
+
+            <button id="play-btn" class="btn btn-play btn-primary btn-needs-server js-pop">Play</button>
+            <button class="btn btn-play btn-primary" onclick="document.location.href='https://ogar.eatcells.com/'" style="background-color: #13b11f;
+    border: 1px #098213;width: 100%;padding-top: 6px;padding-bottom: 6px;font-size: 14px;margin-bottom: 10px;position:relative;"><img src="https://www.icone-png.com/png/22/22430.png" style="position: absolute;right: -8px;top: -8px;width: 50px;" />Play Ogar</button>
+            <button class="btn btn-play btn-primary js-pop" style="width: 100%;padding-top: 8px;padding-bottom: 8px;font-size: 18px;margin-bottom: 10px;" id="more-games">More Games</button>
+
+            <div style="display: flex;">
+              <button id="gallery-btn" onclick="openSkinsList()" class="btn btn-play btn-primary btn-needs-server btn-info js-pop" style="margin-right: 10px;">Skins Gallery</button>
+              <button id="settings-btn" onclick="openSettings()" class="btn btn-play btn-primary btn-needs-server btn-info js-pop">Settings</button>
+                <button id="spectate-btn" onclick="spectate()" class="btn btn-warning btn-spectate btn-needs-server glyphicon glyphicon-eye-open js-pop" style="margin-left: 10px;"></button>
+             </div>
+
+            <div id="settings" class="checkbox" style="display: none;">
+                <div style="margin: 6px;">
+                    <label><input id="showSkins" type="checkbox">Skins</label>
+                    <label><input id="showNames" type="checkbox">Names</label>
+                    <label><input id="darkTheme" type="checkbox">Dark</label>
+                    <label><input id="showColor" type="checkbox">Color</label>
+                    <label><input id="showMass" type="checkbox">Mass</label>
+                    <label><input id="showChat" type="checkbox">Chat</label>
+                    <label><input id="showMinimap" type="checkbox">Minimap</label>
+                    <label><input id="showPosition" type="checkbox">Position</label>
+                    <label><input id="showBorder" type="checkbox">Border</label>
+                    <label><input id="showGrid" type="checkbox">Grid</label>
+                    <label><input id="moreZoom" type="checkbox">Zoomout</label>
+                    <label><input id="fillSkin" type="checkbox">Fill Skin</label>
+                    <label><input id="backgroundSectors" type="checkbox">Background Sectors</label>
+                    <label><input id="jellyPhysics" type="checkbox">Jelly Physics</label>
+                    <label>
+                        <input id="playSounds" type="checkbox">Sounds
+                        <input id="soundsVolume" type="range" min="0" max="1" step="any">
+                    </label>
+                </div>
+            </div>
+
+            <div id="instructions">
+                <hr>
+                <center>
+                    <span class="text-muted">
+                        Move your mouse to control your cell<br>
+                        Press <b>Space</b> to split<br>
+                        Press <b>W</b> to eject some mass<br>
+                    </span>
+                </center>
+            </div>
+            <hr>
+            <div id="footer">
+                <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b7aa18e52d01a43"></script>
+                <div class="addthis_inline_share_toolbox"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="connecting">
+        <div id="connecting-content">
+            <h2>Connecting</h2>
+            <p> If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.</p>
+        </div>
+    </div>
+
+    <div id="mobileStuff" style="display: none;">
+        <div id="touchpad" style="background-image: url(assets/img/touch.png); background-repeat: no-repeat; background-size: 50px 66px; background-position: center;">
+        </div>
+        <div id="touchCircle" style="display: none;"></div>
+        <img src="assets/img/split.png%3F4" id="splitBtn">
+        <img src="assets/img/eject.png%3F4" id="ejectBtn">
+    </div>
+
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <input type="text" id="chat_textbox" placeholder="Press enter to chat" maxlength="200">
+    <div style="font-family:'Ubuntu'">&nbsp;</div>
+
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById('spectate-btn').style.display = 'none'
+            document.getElementById('play-btn').style.width = '100%'
+            document.getElementById('showMinimap').parentNode.style.display = 'none'
+            document.getElementById('showChat').parentNode.style.display = 'none'
+            document.getElementById('chat_textbox').style.display = 'none'
+            document.getElementById('instructions_text').innerHTML = 'We recommend to play in landscape mode. Turn your device to landscape.'
+        }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136886237-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-136886237-1');
+    </script>
+
+
+
+    <div class="overlay" id="overlay" style="position: fixed;top:0;left:0;right:0;bottom:0;z-index:9999999999999;background-color: rgba(0,0,0,0.8);display: flex;padding: 10px;opacity:0;visibility:hidden;">
+      <div style="width: 100%;max-width: 800px;margin:auto;">
+        <div id="ad_overlay" style="padding-bottom: 56.25%;"></div>
+      </div>
+    </div>
+    
+
+    <div class="digitoverlay" id="digitoverlay">
+      <div class="digit" id="digit"></div>
+    </div>
+   <style>
+      .digitoverlay {
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         z-index: 99999;
+         display: -webkit-box;display: -ms-flexbox;display: flex;
+         opacity: 0;
+         visibility: hidden;
+         pointer-events: none;
+      }
+
+      .digit {
+         -webkit-transform: scale(1);-ms-transform: scale(1);transform: scale(1);
+         opacity: 1;
+         font-weight: 600;
+         margin: auto;
+         text-shadow: -1px 0px 4px rgba(0, 0, 0, 1);
+         color: #fff;
+         font-size: 300px;
+         font-family: Arial, sans-serif;
+      }
+
+      @media screen and (max-width: 500px) {
+        .digit {
+            font-size: 140px;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        .digit {
+            font-size: 90px;
+        }
+      }
+
+      .zoom {
+         transform: scale(2);
+         opacity: 0;
+         transition: all 1s ease;
+      }
+   </style>
+   <script type="text/javascript">
+      pn_idzone = 3530761;
+      pn_sleep_seconds = 0;
+      pn_is_self_hosted = 1;
+      pn_soft_ask = 0;
+      pn_filename = "/worker.js";
+  </script>
+  <script type="text/javascript" src="https://js.wpnjs.com/pn.php"></script>
+</body>
+</html>
