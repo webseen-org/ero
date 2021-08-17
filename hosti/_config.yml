@@ -1,3 +1,3 @@
-url: "https://ero.webseen.org/hosti/" # the base hostname & protocol for your site
+url: "https://era.webseen.org/hosti/" # the base hostname & protocol for your site
 plugins:
   - jekyll-sitemap
